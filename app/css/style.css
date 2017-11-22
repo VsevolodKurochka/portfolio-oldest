@@ -59,7 +59,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 body {
   font-size: 18px;
   line-height: 1.42857143;
-  color: #000;
+  color: #0ff;
 }
 
 img {
@@ -1177,11 +1177,6 @@ b,
   .vnav__addition-toggle, .vnav__addition-link_hidden {
     display: none;
   }
-}
-
-.vsite-header {
-  position: relative;
-  z-index: 1;
 }
 
 .inline-block {

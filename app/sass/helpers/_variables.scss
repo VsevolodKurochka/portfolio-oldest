@@ -1,18 +1,18 @@
 // Colors
-	$color-general: #000 !default;
-	$color-black: #000 !default;
-	$color-white: #fff !default;
+	$color-general: #00ffff;
+	$color-black: #000;
+	$color-white: #fff;
 
 	// Brands
-		$color-brand-1: #28a5f5 !default;
-		$color-brand-2: #f00 !default;
+		$color-brand-1: #28a5f5;
+		$color-brand-2: #f00;
 	
 	// Status
-		$color-success: #5cb85c !default;
-		$color-danger: #d9534f !default;
+		$color-success: #5cb85c;
+		$color-danger: #d9534f;
 
 	// Menu
-		$color-responsive-menu: $color-brand-1 !default;
+		$color-responsive-menu: $color-brand-1;
 		$color-responsive-menu-light: lighten($color-responsive-menu, 5%);
 
 

@@ -1,10 +1,9 @@
 extends pug/layout
 block head
-	+add-meta('Main File', 'Description')
+	+add-meta('Portfolio', 'Portfolio')
 block nav
 	include pug/layouts/nav
-block header
-	include pug/layouts/header
 block content
+	include pug/sections/intro
 block footer
 	include pug/layouts/footer
