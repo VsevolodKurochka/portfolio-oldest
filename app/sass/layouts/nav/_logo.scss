@@ -1,0 +1,16 @@
+.#{$themeNav}{
+	&__logo{
+		font-size: 0;
+		&-content{
+			display: inline-block;
+		}
+		@include resp-max(md){
+			.#{$themeNav}_style &{
+				img{
+					vertical-align: middle;
+					max-height: 28px;
+				}
+			}
+		}
+	}
+}

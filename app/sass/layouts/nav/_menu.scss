@@ -1,0 +1,23 @@
+.#{$themeNav}{
+	&__menu{
+		-webkit-overflow-scrolling:touch;
+		@include resp-max(md){
+			.#{$themeNav}_style &{
+				transform: translateZ(0) translateX(-120%);
+				position: fixed;
+				left: 0;
+				width: 270px;
+				height: 100%;
+				padding: 0 0 100px 0;
+				top: 56px;
+				z-index: z('default');
+				overflow-y: auto;
+				@include transition($tr-dur: 0.3s);
+				background-color: $color-responsive-menu;
+				&_active{
+					transform: none;
+				}
+			}
+		}
+	}
+}
