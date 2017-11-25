@@ -31,7 +31,6 @@ var exists = function exists(element) {
 
 (function () {
 	document.addEventListener("DOMContentLoaded", function () {
-		var _this = this;
 
 		var classes = {
 			active: 'active',
@@ -55,23 +54,31 @@ var exists = function exists(element) {
 		for (var _i = 0; _i < anchors.length; _i++) {
 			anchors[_i].addEventListener('click', function (e) {
 				e.preventDefault();
-				var href = _this.getAttribute("href").replace("#", "");
+				var href = this.getAttribute("href").replace("#", "");
 				var scrollAnchor = document.getElementById(href);
 				scrollTo(document.body, scrollAnchor.offsetTop, 600);
 			});
 		}
 
 		// Navigation
-		var jsNav = document.getElementById('navigation');
+
+		var jsNav = document.getElementById('js-navigation');
+		var jsNavMenu = document.getElementById('js-navigation-menu');
+
+		// On scroll add active class to nav
+		window.onscroll = function () {
+			var scrollY = this.scrollY;
+			scrollY > 0 ? addClass(jsNav, 'vnav_scrolled') : removeClass(jsNav, 'vnav_scrolled');
+		};
 
 		// Navigation links
-		var jsNavLinks = document.querySelectorAll('.nav__menu a[href*="#"]');
+		var jsNavLinks = document.querySelectorAll('.vnav__menu a[href*="#"]');
 
 		for (var i = 0; i < jsNavLinks.length; i++) {
 			jsNavLinks[i].addEventListener('click', function (e) {
 				e.preventDefault();
 
-				var vnavhref = _this.getAttribute("href").replace("#", "");
+				var vnavhref = this.getAttribute("href").replace("#", "");
 				var vnavscrollAnchor = document.getElementById(vnavhref);
 
 				removeClass(jsNavBtn, classes.active);

@@ -6,9 +6,22 @@
 		color: $color-black;
 		font-weight: bold;
 		&-link{
-			display: block;
+			position: relative;
+			padding-left: 45px;
+			display: inline-block;
 			color: inherit;
 			text-decoration: none;
+			font-size: 20px;
+			&:before{
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 30px;
+				height: 30px;
+				@include bg('../img/menu/phone.svg');
+			}
 		}
 		&-toggle{
 			-webkit-tap-highlight-color: transparent;

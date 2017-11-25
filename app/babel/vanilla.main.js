@@ -47,7 +47,7 @@
 				const anchors = document.getElementsByClassName('anchor');
 
 				for(let i = 0; i < anchors.length; i++){
-					anchors[i].addEventListener('click', (e) => {
+					anchors[i].addEventListener('click', function(e) {
 						e.preventDefault();
 						let href = this.getAttribute("href").replace("#", "");
 						let scrollAnchor = document.getElementById(href);
@@ -56,13 +56,21 @@
 				}
 			
 		// Navigation
-			const jsNav = document.getElementById('navigation');
+			
+			const jsNav = document.getElementById('js-navigation');
+			const jsNavMenu = document.getElementById('js-navigation-menu');
+
+			// On scroll add active class to nav
+				window.onscroll = function(){
+					let scrollY = this.scrollY;
+					scrollY > 0 ? addClass(jsNav, 'vnav_scrolled') : removeClass(jsNav, 'vnav_scrolled');
+				}
 
 			// Navigation links
-				const jsNavLinks = document.querySelectorAll('.nav__menu a[href*="#"]');
+				const jsNavLinks = document.querySelectorAll('.vnav__menu a[href*="#"]');
 
 				for(var i = 0; i < jsNavLinks.length; i++){
-					jsNavLinks[i].addEventListener('click', (e) => {
+					jsNavLinks[i].addEventListener('click', function(e) {
 						e.preventDefault();
 
 						let vnavhref = this.getAttribute("href").replace("#", "");

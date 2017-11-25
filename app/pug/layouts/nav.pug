@@ -4,7 +4,7 @@ include ../helpers/data
 include ../helpers/mixins
 
 +b.vfixed._md-top
-	+b.vnav._style
+	+b.vnav._style#js-navigation
 		+e.container.vcontainer
 			+e.row.vrow.vflex-y-center
 				+e.logo.vcol-8.vcol-md-3
@@ -13,20 +13,16 @@ include ../helpers/mixins
 							span Line1
 							span Line2
 							span Line3
-						//+e.SPAN.text Menu
 					+e.logo-content
-						+e.logo-content-img(src="img/logo.png" alt="")
-				+e.NAV.menu.vcol-12.vcol-md-6#navigation
+						+e.P.logo-content-text Kurochka
+				+e.NAV.menu.vcol-12.vcol-md-6#js-navigation-menu
 					ul
 						for item in navigation
 							+menu-item('true', item.link, item.name)
-						+menu-item
-							+b.BUTTON.vbtn._navigation(data-action="v-modal" data-open="#form") Button
 				+e.addition.vcol-4.vcol-md-3#js-vnav-addition
 					+e.addition-toggle#js-vnav-toggle
 						span
 						span
 						span
 					+e.addition-links.js-vnav-links
-						+e.A.addition-link +99 999 999 99
-						+e.A.addition-link._hidden +99 999 999 99
+						+e.A.addition-link(href="tel: +38 (063) 505 62 63") +38 (063) 505 62 63

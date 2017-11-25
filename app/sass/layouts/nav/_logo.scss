@@ -3,6 +3,11 @@
 		font-size: 0;
 		&-content{
 			display: inline-block;
+			&-text{
+				line-height: 1;
+				font-size: 30px;
+				font-weight: 900;
+			}
 		}
 		@include resp-max(md){
 			.#{$themeNav}_style &{

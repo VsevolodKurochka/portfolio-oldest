@@ -1,10 +1,16 @@
 // Connect fonts
-
+@mixin font($font){
+	@if $font == 'general'{
+		font-family: 'Fira Sans Condensed', sans-serif;
+	}@else if $font == 'secondary'{
+		font-family: 'Playfair Display', serif;
+	}
+}
 .font-general{
-	font-family: 'Roboto Condensed', sans-serif;
+	@include font('general');
 }
 .font-secondary{
-	font-family: 'Playfair Display', serif;
+	@include font('secondary');
 }
 $font-weights: (
 	'font-weight-regular' : 400,
