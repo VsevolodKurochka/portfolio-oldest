@@ -85,3 +85,9 @@
 		vertical-align: middle;   
 	}
 }
+
+@mixin className($class, $prefix: $themePrefix){
+	.#{$prefix}#{$class}{
+		@content;
+	}
+}

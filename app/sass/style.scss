@@ -34,8 +34,7 @@
 @import 'utilities/text';
 
 // Button
-@import 'components/button/helpers';
-@import 'components/button/effects';
+@import 'components/button/button-helpers';
 @import 'components/button/button';
 
 // Form
@@ -47,10 +46,19 @@
 @import 'components/title/title';
 
 // Circle
-@import 'components/circle/circle';
+@import 'components/shape/shape';
 
-// Section
-@import 'sections/*';
+// Sections
+
+// Intro
+@import 'sections/intro/intro';
+@import 'sections/intro/intro-shape';
+@import 'sections/intro/intro-title';
+@import 'sections/intro/intro-subtitle';
+
+// About
+@import 'sections/about/about';
+
 
 //@import 'fontawesome/font-awesome';
 //@import 'vendor/tabs/tabs';

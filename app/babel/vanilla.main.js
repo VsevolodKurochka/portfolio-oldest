@@ -26,6 +26,10 @@
 (function(){
 	document.addEventListener("DOMContentLoaded", function(){
 
+		// Initialize Emmergency
+
+			emergence.init();
+
 		const classes = {
 			active: 'active',
 			menuActive: 'vnav__menu_active'
@@ -77,7 +81,7 @@
 						let vnavscrollAnchor = document.getElementById(vnavhref);
 
 						removeClass(jsNavBtn, classes.active);
-						removeClass(jsNav, classes.menuActive);
+						removeClass(jsNavMenu, classes.menuActive);
 
 						scrollTo(document.body, vnavscrollAnchor.offsetTop, 600);
 
@@ -90,7 +94,7 @@
 				if(exists(jsNavBtn)){
 					jsNavBtn.addEventListener('click', function(){
 						toggleClass(this, classes.active);
-						toggleClass(jsNav, classes.menuActive);
+						toggleClass(jsNavMenu, classes.menuActive);
 					});
 				}
 

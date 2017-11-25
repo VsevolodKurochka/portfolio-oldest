@@ -3,6 +3,7 @@
 		font-size: 0;
 		&-content{
 			display: inline-block;
+			vertical-align: middle;
 			&-text{
 				line-height: 1;
 				font-size: 30px;
@@ -11,9 +12,10 @@
 		}
 		@include resp-max(md){
 			.#{$themeNav}_style &{
-				img{
-					vertical-align: middle;
-					max-height: 28px;
+				&-content{
+					&-text{
+						color: #fff;
+					}
 				}
 			}
 		}

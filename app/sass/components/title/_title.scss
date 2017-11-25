@@ -9,31 +9,30 @@ $sizes: (
 		lg:   40px
 	),
 	'vtitle-md': (
-		sm:   30px
+		sm: 	24px,
+		md:   30px
 	),
 	'vtitle-lg': (
-		sm:   40px,
-		md:   50px,
-		lg:   60px
+		xs:		50px,
+		sm:   76px,
+		md:   86px,
+		lg:   96px
 	),
 	'vtitle-xlg': (
-		sm:   40px,
-		md:   50px,
+		sm:   100px,
+		md:   120px,
 		lg:   160px
 	),
 	'vtitle-xxlg': (
-		sm:   40px,
-		md:   50px,
+		sm:   200px,
+		md:   250px,
 		lg:   280px
 	)
 );
 
-
 %vtitle-default{
 	margin-top: 5px;
 	margin-bottom: 15px;
-	line-height: 1.1;
-	font-weight: normal;
 }
 .vtitle{
 	&-xs{
@@ -47,21 +46,25 @@ $sizes: (
 		@extend %vtitle-default;
 	}
 	&-md{
-		font-size: 25px;
+		line-height: 1.4;
+		font-size: 20px;
 		@include fs('vtitle-md');
 		@extend %vtitle-default;
 	}
 	&-lg{
-		font-size: 30px;
+		line-height: 1.1;
+		font-size: 45px;
 		@include fs('vtitle-lg');
 		@extend %vtitle-default;
 	}
 	&-xlg{
-		font-size: 30px;
+		line-height: 1.1;
+		font-size: 50px;
 		@include fs('vtitle-xlg');
 		@extend %vtitle-default;
 	}
 	&-xxlg{
+		line-height: 1.1;
 		font-size: 30px;
 		@include fs('vtitle-xxlg');
 		@extend %vtitle-default;

@@ -1,0 +1,32 @@
+@include className('intro'){
+	&__shape{
+		z-index: -1;
+		&_left{
+			left: -20%;
+			bottom: 75%;
+		}
+		&_right{
+			right: 0;
+			bottom: 60%;
+		}
+		&_main{
+			left: -100px;
+		}
+		@include resp-max(sm){
+			&_main{
+				left: -15%;
+				@include size(300px);
+			}
+		}
+		@include resp-min(md){
+			&_main{
+				top: -100px;
+			}
+		}
+		@include resp-min(lg){
+			&_main{
+				top: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,7 @@
+@include className('intro'){
+	&__title{
+		@include font('secondary');
+		font-weight: 900;
+		letter-spacing: 2.5px;
+	}
+}

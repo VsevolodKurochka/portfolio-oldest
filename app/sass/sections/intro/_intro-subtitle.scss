@@ -1,0 +1,13 @@
+@include className('intro'){
+	&__subtitle{
+		position: relative;
+		font-weight: 300;
+		line-height: 1.4;
+		@include resp-min(lg){
+			left: -15px;
+		}
+		@include resp-min(xlg){
+			left: -125px;
+		}
+	}
+}

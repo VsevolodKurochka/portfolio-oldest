@@ -32,6 +32,10 @@ var exists = function exists(element) {
 (function () {
 	document.addEventListener("DOMContentLoaded", function () {
 
+		// Initialize Emmergency
+
+		emergence.init();
+
 		var classes = {
 			active: 'active',
 			menuActive: 'vnav__menu_active'
@@ -82,7 +86,7 @@ var exists = function exists(element) {
 				var vnavscrollAnchor = document.getElementById(vnavhref);
 
 				removeClass(jsNavBtn, classes.active);
-				removeClass(jsNav, classes.menuActive);
+				removeClass(jsNavMenu, classes.menuActive);
 
 				scrollTo(document.body, vnavscrollAnchor.offsetTop, 600);
 			});
@@ -94,7 +98,7 @@ var exists = function exists(element) {
 		if (exists(jsNavBtn)) {
 			jsNavBtn.addEventListener('click', function () {
 				toggleClass(this, classes.active);
-				toggleClass(jsNav, classes.menuActive);
+				toggleClass(jsNavMenu, classes.menuActive);
 			});
 		}
 
