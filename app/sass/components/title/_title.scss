@@ -55,6 +55,7 @@ $sizes: (
 		line-height: 1.1;
 		font-size: 45px;
 		@include fs('vtitle-lg');
+		@include font('secondary');
 		@extend %vtitle-default;
 	}
 	&-xlg{
@@ -68,5 +69,12 @@ $sizes: (
 		font-size: 30px;
 		@include fs('vtitle-xxlg');
 		@extend %vtitle-default;
+	}
+	&-group{
+		&__content{
+			@include resp-min(md){
+				padding-left: 100px;
+			}
+		}
 	}
 }

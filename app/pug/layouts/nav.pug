@@ -15,14 +15,11 @@ include ../helpers/mixins
 							span Line3
 					+e.logo-content
 						+e.P.logo-content-text Kurochka
-				+e.NAV.menu.vcol-12.vcol-md-6#js-navigation-menu
+				+e.NAV.menu.col-12.col-md-6#js-navigation-menu
 					ul
 						for item in navigation
 							+menu-item('true', item.link, item.name)
-				+e.addition.vcol-4.vcol-md-3#js-vnav-addition
-					+e.addition-toggle#js-vnav-toggle
-						span
-						span
-						span
-					+e.addition-links.js-vnav-links
-						+e.A.addition-link(href="tel: +38 (063) 505 62 63") +38 (063) 505 62 63
+				+e.addition.col-4.col-md-3
+					+e.A.addition-link(href="tel: +38 (063) 505 62 63")
+						+e.I.addition-link-icon.fa.fa-2x.fa-mobile(aria-hidden="true")
+						+e.SPAN.addition-link-text +38 (063) 505 62 63

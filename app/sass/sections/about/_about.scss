@@ -1,4 +1,6 @@
 @include className('about'){
+	position: relative;
+	z-index: 1;
 	padding-top: 45px;
 	padding-bottom: 45px;
 	@include resp-min(md){

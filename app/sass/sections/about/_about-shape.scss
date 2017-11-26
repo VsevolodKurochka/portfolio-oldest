@@ -1,0 +1,11 @@
+@include className('about'){
+	&__shape{
+		@include resp-min(sm){
+			right: 0;
+			top: 0;
+		}
+		@include resp-min(md){
+			top: -200px;
+		}
+	}
+}

@@ -48,6 +48,9 @@
 // Circle
 @import 'components/shape/shape';
 
+// Circle
+@import 'components/highlight/highlight';
+
 // Sections
 
 // Intro
@@ -58,9 +61,11 @@
 
 // About
 @import 'sections/about/about';
+@import 'sections/about/about-image';
+@import 'sections/about/about-shape';
 
 
-//@import 'fontawesome/font-awesome';
+@import 'vendor/font-awesome/font-awesome';
 //@import 'vendor/tabs/tabs';
 //@import 'vendor/modal/*';
 //@import 'vendor/carousel/carousel';
