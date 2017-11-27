@@ -10,7 +10,8 @@ $sizes: (
 	),
 	'vtitle-md': (
 		sm: 	24px,
-		md:   30px
+		md:   25px,
+		lg: 	26px
 	),
 	'vtitle-lg': (
 		xs:		50px,
@@ -22,11 +23,6 @@ $sizes: (
 		sm:   100px,
 		md:   120px,
 		lg:   160px
-	),
-	'vtitle-xxlg': (
-		sm:   200px,
-		md:   250px,
-		lg:   280px
 	)
 );
 
@@ -64,16 +60,25 @@ $sizes: (
 		@include fs('vtitle-xlg');
 		@extend %vtitle-default;
 	}
-	&-xxlg{
-		line-height: 1.1;
-		font-size: 30px;
-		@include fs('vtitle-xxlg');
-		@extend %vtitle-default;
-	}
+	// &-xxlg{
+	// 	line-height: 1.1;
+	// 	font-size: 30px;
+	// 	@include fs('vtitle-xxlg');
+	// 	@extend %vtitle-default;
+	// }
 	&-group{
 		&__content{
+			&-footer{
+				margin-top: 30px;
+			}
+			@include resp-min(sm){
+				padding-left: 30px;
+			}
 			@include resp-min(md){
-				padding-left: 100px;
+				padding-left: 45px;
+			}
+			@include resp-min(lg){
+				padding-left: 75px;
 			}
 		}
 	}

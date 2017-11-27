@@ -1,8 +1,12 @@
 @include className('about'){
 	&__shape{
-		@include resp-min(sm){
-			right: 0;
-			top: 0;
+		@include resp-max(xs){
+			position: relative;
+			margin-bottom: 30px;
+		}
+		@include resp-min(xs){
+			right: 15px;
+			top: 15px;
 		}
 		@include resp-min(md){
 			top: -200px;

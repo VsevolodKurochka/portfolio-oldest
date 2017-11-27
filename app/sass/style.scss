@@ -40,16 +40,21 @@
 // Form
 @import 'components/form/form-helpers';
 @import 'components/form/form';
-@import 'components/form/form-controls';
 
 // Title
-@import 'components/title/title';
+@import 'components/title';
 
 // Circle
-@import 'components/shape/shape';
+@import 'components/shape';
 
-// Circle
-@import 'components/highlight/highlight';
+// highlight
+@import 'components/highlight';
+
+// Line
+@import 'components/line';
+
+// Line
+@import 'components/letters-bg';
 
 // Sections
 
@@ -61,8 +66,15 @@
 
 // About
 @import 'sections/about/about';
+@import 'sections/about/about-container';
 @import 'sections/about/about-image';
 @import 'sections/about/about-shape';
+@import 'sections/about/about-letters-bg';
+
+// Skills
+@import 'sections/skills/skills';
+@import 'sections/skills/skills-container';
+@import 'sections/skills/skills-letters-bg';
 
 
 @import 'vendor/font-awesome/font-awesome';

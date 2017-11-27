@@ -1,0 +1,18 @@
+$letters-bg-size: (
+	'letters-bg-size': (
+		xs: 	90px,
+		sm:   110px,
+		md:   150px,
+		lg:   220px
+	)
+);
+@include className('letters-bg'){
+	position: absolute;
+	color: $color-black;
+	opacity: 0.04;
+	line-height: 1;
+	font-size: 70px;
+	font-weight: bold;
+	text-transform: uppercase;
+	@include fs('letters-bg-size', $letters-bg-size);
+}

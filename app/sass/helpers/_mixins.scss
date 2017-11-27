@@ -29,7 +29,7 @@
 
 
 // Миксин, который будет брать размеры шрифтов с карты($sizes)
-@mixin fs($fs-map, $fs-breakpoints: $breakpoints){
+@mixin fs($fs-map, $sizes: $sizes, $fs-breakpoints: $breakpoints){
 	$fs-map: map-get($sizes, $fs-map);
 	@each $fs-breakpoint, $fs-font-size in $fs-map{
 		$fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);

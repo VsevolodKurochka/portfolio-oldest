@@ -5,7 +5,7 @@
 
 	&__inner,
 	&__inner-shape{
-		position: absolute;
+		position: relative;
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -35,12 +35,13 @@
 		opacity: 0.1;
 	}
 	@include resp-min(sm){
-		width: 400px;
-		height: 400px;
+		@include size(300px);
 	}
 	@include resp-min(md){
-		width: 600px;
-		height: 600px;
+		@include size(500px);
+	}
+	@include resp-min(lg){
+		@include size(600px);
 	}
 }
 @keyframes jello-horizontal {
