@@ -64,16 +64,18 @@
 			const jsNav = document.getElementById('js-navigation');
 			const jsNavMenu = document.getElementById('js-navigation-menu');
 
-			// On scroll add active class to nav
-				window.onscroll = function(){
-					let scrollY = this.scrollY;
-					scrollY > 0 ? addClass(jsNav, 'vnav_scrolled') : removeClass(jsNav, 'vnav_scrolled');
-				}
+			// const sectionsAnchors = document.querySelectorAll('.vsection-anchor');
+			// const sectionsAnchorsLength = sectionsAnchors.length;
+
+			// Scripts for navigation
+
+
 
 			// Navigation links
 				const jsNavLinks = document.querySelectorAll('.vnav__menu a[href*="#"]');
+				const jsNavLinksLength = jsNavLinks.length;
 
-				for(var i = 0; i < jsNavLinks.length; i++){
+				for(let i = 0; i < jsNavLinksLength; i++){
 					jsNavLinks[i].addEventListener('click', function(e) {
 						e.preventDefault();
 
@@ -88,7 +90,7 @@
 					});
 				}
 
-			// Button HAMBURGER
+			// HAMBURGER
 				const jsNavBtn = document.getElementById('js-vnav__btn');
 
 				if(exists(jsNavBtn)){
@@ -107,99 +109,95 @@
 					});	
 				}
 
+			// Window scrolling JS
+				window.addEventListener("scroll", function(){
+					let windowScroll = this.scrollY;
+					windowScroll > 0 ? addClass(jsNav, 'vnav_scrolled') : removeClass(jsNav, 'vnav_scrolled');
 
-		// Modal Window initialization
-		let themeModal = 'vmodal';
-		let modalBtn = document.querySelectorAll(`[data-action="${themeModal}"]`);
-		let modalBtnL = modalBtn.length;
+				});
+				// window.onscroll = onScroll;
 
-		const modal = document.querySelectorAll(`.${themeModal}`);
-		const modalL = modal.length;
+				// function onScroll() {
+				//     var removeActiveClass = function (elements) {
+				//         for (var i = 0; i < elements.length; ++i) {
+				//             elements[i].classList.remove('active');
+				//         }
+				//     }
+				//     var anchors = document.querySelectorAll('.vnav__menu a');
+				//     var previousRefElement = null;
+				//     for (var i = 0; i < anchors.length; ++i) {
+				//         // Get the current element by the id from the anchor's href.
+				//         var currentRefElement = document.getElementById(anchors[i].getAttribute('href').substring(1));
+				//         var currentRefElementTop = currentRefElement.getBoundingClientRect().top;
+				//         // Searching for the element whose top haven't left the top of the browser.
+				//         if (currentRefElementTop <= 0) {
+				//             //The browser's top line haven't reached the current element, so the previous element is the one we currently look at.
+				//             previousRefElement = anchors[i];
+				//             // Edge case for last element.
+				//             if (i == anchors.length - 1) {
+				//                 removeActiveClass(anchors);
+				//                 anchors[i].classList.add("active");
+				//             }
+				//         } else {
+				//             removeActiveClass(anchors);
+				//             previousRefElement.classList.add("active");
+				//             break;
+				//         }
+				        
+				//     }
+				// }
+				// var section = document.querySelectorAll(".vsection-anchor");
+				// var documentHeight = document.body.clientHeight;
+			 //  var sections = {};
+			 //  var i = 0;
 
-		const modalBtnClose = document.querySelectorAll(`[data-close="${themeModal}"]`);
-		const modalBtnCloseL = modalBtnClose.length;
+			 //  log(sections);
 
-		
-		function modalClose(el){
-			removeClass(el, `${themeModal}_showing_in`);
-			removeClass(document.body, `${themeModal}-open`);
-			// if(el.getElementsByClassName('vmodal__video')[0]){
-			// 	el.getElementsByClassName('vmodal__video')[0].innerHTML = '';
-			// }
-		}
-		function getEventTarget(e){
-			var targ;
-	
-			if (e.target) { // W3C
-				targ = e.target;
-			}else if (e.srcElement) { // IE6-8
-				targ = e.srcElement;
-			}else if(e.originalTarget){
-				targ = e.originalTarget;
-			}
-			if (targ.nodeType == 3) { // Safari
-				targ = targ.parentNode;
-			}
-			return targ;
-		}
-		function bodyClick(e){
-			let target = getEventTarget(e);
-			for(let i = 0; i < modalL; i++){
-				if (target == modal[i]) {
-					modalClose(modal[i]);
-				}
-			}
-		}
-		for(var i = 0; i < modalBtnL; i++){
-			modalBtn[i].addEventListener('click', function(){
+			 //  Array.prototype.forEach.call(section, function(e) {
+			 //    sections[e.id] = {
+			 //    	height: e.clientHeight,
+			 //    	top: e.offsetTop,
+			 //    	bottom: e.clientHeight + e.offsetTop
+			 //    }
+			 //  });
 
-				// Get button data-attributes
-				var modalData = this.dataset;
-
-				// Get attribute data-open and replace # with empty line
-				var modalID = modalData.open.replace("#", "");
-				
-				
-				if( exists(document.getElementById(modalID) ) ){
-
-					let modalCurrent = document.getElementById(modalID);
-
-					addClass(document.body, `${themeModal}-open`);
-					addClass(modalCurrent, `${themeModal}_showing_in`);
-
-					// if(modalData.video != undefined){
-					// 	let videoSRC = modalData.video;
-					// 	let videoWrapper = modalCurrent.getElementsByClassName('v-modal__video')[0];
-
-					// 	videoWrapper.innerHTML = '';
-
-					// 	let videoIframe = document.createElement('iframe');
-
-					// 	addClass(videoIframe, 'v-modal__iframe');
-					// 	videoIframe.setAttribute('src', videoSRC);
-					// 	videoWrapper.appendChild(videoIframe);
-					// }
-
-				}else{
-					console.error('No element with ID: ' + modalID);
-				}
-
-			});
-		}
-		
-		for(let i = 0; i < modalBtnCloseL; i++){
-			modalBtnClose[i].addEventListener('click', function(){
-				modalClose(this.closest(`.${themeModal}`));
-			});
-		}
-		
-		let bodyEvents = ['click', 'touchstart'];
-		let bodyEventsL = bodyEvents.length;
-
-		for(let i = 0; i < bodyEventsL; i++){
-			document.body.addEventListener(bodyEvents[i], function(e) {
-				bodyClick(e);
-			}, false);
-		}
+			 //  window.onscroll = function() {
+			 //    var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+			 //    for (i in sections) {
+			 //    	for(let j = 0; j < jsNavLinksLength; j++){
+		  //     		if( hasClass(jsNavLinks[i], 'highlight') ) removeClass(jsNavLinks[i], 'highlight');
+		  //     	}
+			 //      if (scrollPosition >= sections[i].top && scrollPosition <= sections[i].bottom ) {
+			 //      	// if( exists(document.querySelector('.vnav__menu .active')) ){
+			 //      	// 	document.querySelector('.vnav__menu .active').setAttribute('class', '');
+			 //      	// }
+			      	
+    // 					document.querySelector('.vnav__menu a[href*="' + i + '"]').setAttribute('class', 'highlight');
+			 //      }
+			 //    }
+			 //  };
 	});
 }());
+
+// (function() {
+//   'use strict';
+
+//   var section = document.querySelectorAll(".vsection-anchor");
+//   var sections = {};
+//   var i = 0;
+
+//   Array.prototype.forEach.call(section, function(e) {
+//     sections[e.id] = e.offsetTop;
+//   });
+
+//   window.onscroll = function() {
+//     var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+
+//     for (i in sections) {
+//       if (sections[i] <= scrollPosition) {
+//         document.querySelector('.active').setAttribute('class', ' ');
+//         document.querySelector('a[href*=' + i + ']').setAttribute('class', 'active');
+//       }
+//     }
+//   };
+// })();
