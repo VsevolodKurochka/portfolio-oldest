@@ -22,5 +22,8 @@
 				}
 			}
 		}
+		@include resp-min(md){
+			order: 2;
+		}
 	}
 }

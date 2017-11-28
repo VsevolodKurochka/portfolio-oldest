@@ -22,6 +22,7 @@
 			}
 		}
 		@include resp-min(md){
+			order: 3;
 			color: $color-black;
 			&-link{
 				&-icon{

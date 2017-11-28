@@ -1,0 +1,79 @@
+@include className('skills'){
+	&__monitor{
+		position: relative;
+		z-index: 1;
+		@include resp-min(sm){
+			text-align: right;
+		}
+		&-inner{
+			display: inline-block;
+		}
+		&-bubble{
+			font-weight: bold;
+			@include resp-min(sm){
+				
+				@for $i from 1 through 15{
+					&:nth-child(#{$i}){
+						background-color: transparentize(lighten(#d8d8d8, ((random(25) * $i) / 15%)  ), 0.5);
+						left: $i + random(45) + px;
+						top: $i + random(5) + px;
+						animation: bubbleMove-#{$i} 25s linear 0s infinite;
+						animation-delay: random(10) / #{$i}s;
+						transform: translate3d(random(75) * $i + %, (random(75) * $i + %) , 0);
+					}
+					@keyframes bubbleMove-#{$i} {
+						0%, 100%{
+							transform: none;
+						}
+						50%{
+							transform: translate(random(50)* $i + %, random(100) * $i + %);
+						}
+					}
+				}
+				
+			}
+			
+			@include resp-min(sm){
+				position: relative;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 18px;
+				width: 100px;
+				height: 100px;
+				border-radius: 100%;
+				background-color: #ddd;
+				text-align: center;
+			}
+			@include resp-min(md){
+				font-size: 30px;
+				width: 150px;
+				height: 150px;
+			}
+		}
+		&-area{
+			@include resp-min(sm){
+				background-color: #fff;
+				overflow: hidden;
+				position: absolute;
+				top: 26px;
+				left: 91px;
+				width: 540px;
+				height: 338px;
+				text-align: center;
+			}
+			@include resp-min(md){
+				top: 34px;
+				left: 118px;
+				width: 705px;
+				height: 440px;
+			}
+			@include resp-min(lg){
+				top: 36px;
+				left: 266px;
+				width: 749px;
+				height: 469px;
+			}
+		}
+	}
+}

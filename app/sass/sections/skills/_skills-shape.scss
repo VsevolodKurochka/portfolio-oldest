@@ -1,0 +1,9 @@
+@include className('skills'){
+	&__shape{
+		z-index: -1;
+		&_right{
+			right: 0;
+			bottom: 60%;
+		}
+	}
+}

@@ -14,5 +14,6 @@ $letters-bg-size: (
 	font-size: 70px;
 	font-weight: bold;
 	text-transform: uppercase;
+	z-index: -1;
 	@include fs('letters-bg-size', $letters-bg-size);
 }
