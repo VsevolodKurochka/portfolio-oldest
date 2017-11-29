@@ -1,0 +1,36 @@
+include ../bem/index
+include ../helpers/config
+include ../helpers/sections/portfolio/mixins
++b.SECTION.portfolio__.section-anchor#section-portfolio
+	+e.shape._right.shape__._brand-1._transparent(data-emergence="hidden")
+		+e.inner
+			+e.inner-shape._brand-1
+	+e.container.container
+		+b.title-group._inline
+			+e.H3.title.title-lg My<br>Works
+			+e.content
+				+b.P.title-md
+					| For
+					+b.SPAN.highlight._brand-1 3 years of work
+					| , I have collected many projects that I can share with you. For each project, I made considerable efforts to ensure that everyone was happy!
+		+e.row.vrow
+			.vcol-12.vcol-sm-8.vcol-md-9
+				for group in portfolio
+					+e.tab(id='tab-' + group.info.ID)
+						+e.tab-header
+							+e.P.tab-title=group.info.title
+						+e.tab-content
+							.vrow
+								for groupItem in group.items
+									+case(groupItem.image, groupItem.title, groupItem.content, groupItem.tag, groupItem.link)
+			+e.ASIDE.widget.widget__.vcol-12.vcol-sm-4.vcol-md-3
+				+e.item
+					+e.P.title Categories
+					+e.UL.list
+						+e.LI.list-element
+							+e.A.list-element-link._active(href="#") Wordpress
+						+e.LI.list-element
+							+e.A.list-element-link(href="#") Landing Page
+						+e.LI.list-element
+							+e.A.list-element-link(href="#") Woocomerce
+		+e.P.letters-bg.letters-bg Perfection in detail

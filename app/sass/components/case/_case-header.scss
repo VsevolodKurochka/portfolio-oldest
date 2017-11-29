@@ -1,0 +1,10 @@
+@include className('case'){
+	&__header{
+		height: 200px;
+		overflow: hidden;
+		&-image{
+			@include size(100%);
+			object-fit: cover;
+		}
+	}
+}

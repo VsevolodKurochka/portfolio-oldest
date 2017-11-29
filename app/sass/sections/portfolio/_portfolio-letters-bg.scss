@@ -1,0 +1,10 @@
+@include className('portfolio'){
+	&__letters-bg{
+		left: 5px;
+		bottom: 5px;
+		@include resp-min(xs){
+			bottom: 50px;
+			left: -15%;
+		}
+	}
+}

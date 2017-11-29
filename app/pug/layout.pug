@@ -6,7 +6,7 @@ html(lang="ru")
 		include helpers/config
 		include helpers/mixins
 		block css
-			+css("//fonts.googleapis.com/css?family=Fira+Sans+Condensed:300,900|Playfair+Display:700,900&amp;subset=cyrillic")
+			+css("//fonts.googleapis.com/css?family=Fira+Sans+Condensed:300,400,900|Playfair+Display:700,900&amp;subset=cyrillic")
 			+css("css/style.css")
 		block js
 			+js("js/vanilla.main.js")
@@ -15,7 +15,7 @@ html(lang="ru")
 	body
 		block nav
 		.site#page
-			.site-content#content
+			main(role="main").site-content#content
 				+b.line
 					+e.container.container
 						+e.row.row

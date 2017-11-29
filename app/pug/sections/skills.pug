@@ -1,31 +1,25 @@
 include ../bem/index
 include ../helpers/config
+include ../helpers/sections/skills/data
+
 +b.SECTION.skills.section-anchor#section-skills
 	+e.shape._right.shape__._brand-1._transparent(data-emergence="hidden")
-			+e.inner
-				+e.inner-shape._brand-1
+		+e.inner
+			+e.inner-shape._brand-1
 	+e.container.container
 		+b.row
 			+b.col-12.col-sm-6
 				+b.title-group
 					+e.H3.title.title-lg My<br>Skills
+					+e.content
+						+b.P.title-md
+							| And what can you be 
+							+b.SPAN.highlight._brand-1 proud of?
 		+e.monitor
 			+e.monitor-inner
 				+e.IMG.monitor-img(src="img/skills/monitor.png")
 				+e.monitor-area
-					+e.monitor-bubble CSS3
-					+e.monitor-bubble LESS
-					+e.monitor-bubble Bootstrap
-					+e.monitor-bubble Jq
-					+e.monitor-bubble PHP
-					+e.monitor-bubble Gulp
-					+e.monitor-bubble PUG
-					+e.monitor-bubble iOS
-					+e.monitor-bubble JS
-					+e.monitor-bubble WP
-					+e.monitor-bubble Angular
-					+e.monitor-bubble SASS
-					+e.monitor-bubble REACT
-					+e.monitor-bubble HTML5
-					+e.monitor-bubble Cross<br>Browser
+					+e.monitor-list
+						for skill in skills
+							+e.monitor-list-element=skill
 		+e.P.letters-bg.letters-bg I am Perfect

@@ -1,0 +1,9 @@
+@include className('case'){
+	&__body{
+		padding: 20px;
+		&-content{
+			font-size: 15px;
+			word-break: word-break;
+		}
+	}
+}

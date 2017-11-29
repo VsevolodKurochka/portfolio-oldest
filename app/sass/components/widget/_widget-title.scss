@@ -1,0 +1,11 @@
+@include className('widget'){
+	&__title{
+
+		padding-bottom: 15px;
+		margin-bottom: 15px;
+		border-bottom: 1px solid $color-brand-2;
+		font-size: 25px;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+}

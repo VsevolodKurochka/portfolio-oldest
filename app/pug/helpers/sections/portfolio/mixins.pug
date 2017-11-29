@@ -1,0 +1,17 @@
+mixin case(image, title, content, tag, link)
+	+b.case.col-12.col-md-4
+		+e.inner
+			+e.header
+				+e.header-image(src=image)
+			+e.content
+				+e.body
+					+e.A.title=title
+					+e.body-content
+						p=content
+				+e.footer
+					+e.footer-part
+						+e.A.subtitle(href="#")=tag
+					+e.footer-part
+						+e.A.link.btn._plus(href=link)
+							i
+							p Visit

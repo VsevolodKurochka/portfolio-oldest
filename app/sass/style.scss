@@ -53,32 +53,38 @@
 // Line
 @import 'components/line';
 
-// Line
+// Letters Bg
 @import 'components/letters-bg';
 
+// Case
+@import 'components/case/*';
+
+// Widget
+@import 'components/widget/*';
+
 // Sections
+@import 'sections/**/*';
+// // Intro
+// @import 'sections/intro/intro';
+// @import 'sections/intro/intro-shape';
+// @import 'sections/intro/intro-title';
+// @import 'sections/intro/intro-subtitle';
 
-// Intro
-@import 'sections/intro/intro';
-@import 'sections/intro/intro-shape';
-@import 'sections/intro/intro-title';
-@import 'sections/intro/intro-subtitle';
+// // About
+// @import 'sections/about/about';
+// @import 'sections/about/about-container';
+// @import 'sections/about/about-image';
+// @import 'sections/about/about-shape';
+// @import 'sections/about/about-letters-bg';
 
-// About
-@import 'sections/about/about';
-@import 'sections/about/about-container';
-@import 'sections/about/about-image';
-@import 'sections/about/about-shape';
-@import 'sections/about/about-letters-bg';
+// // Skills
+// @import 'sections/skills/skills';
+// @import 'sections/skills/skills-shape';
+// @import 'sections/skills/skills-container';
+// @import 'sections/skills/skills-letters-bg';
+// @import 'sections/skills/skills-monitor';
 
-// Skills
-@import 'sections/skills/skills';
-@import 'sections/skills/skills-shape';
-@import 'sections/skills/skills-container';
-@import 'sections/skills/skills-letters-bg';
-@import 'sections/skills/skills-monitor';
-
-@import 'vendor/font-awesome/font-awesome';
+// @import 'vendor/font-awesome/font-awesome';
 //@import 'vendor/tabs/tabs';
 //@import 'vendor/modal/*';
 //@import 'vendor/carousel/carousel';

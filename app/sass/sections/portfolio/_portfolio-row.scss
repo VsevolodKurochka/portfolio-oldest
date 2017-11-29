@@ -1,0 +1,8 @@
+@include className('portfolio'){
+	&__row{
+		margin-top: 45px;
+		@include resp-min(sm){
+			flex-direction: row-reverse;
+		}
+	}
+}

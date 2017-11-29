@@ -67,6 +67,12 @@ $sizes: (
 	// 	@extend %vtitle-default;
 	// }
 	&-group{
+		@include resp-min(sm){
+			&_inline{
+				display: flex;
+				align-items: center;
+			}
+		}
 		&__content{
 			&-footer{
 				margin-top: 30px;

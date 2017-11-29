@@ -22,13 +22,19 @@
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-babel": "^7.0.0",
+    "gulp-cache": "^1.0.1",
     "gulp-csscomb": "^3.0.8",
+    "gulp-data": "^1.2.1",
     "gulp-html-beautify": "^1.0.1",
     "gulp-if": "^2.0.2",
     "gulp-install": "^1.1.0",
+    "gulp-merge-json": "^1.2.0",
     "gulp-notify": "^3.0.0",
     "gulp-pug": "^3.3.0",
     "gulp-sass": "^3.1.0",
     "gulp-sass-glob": "^1.0.8"
+  },
+  "dependencies": {
+    "merge-json": "0.1.0-b.3"
   }
 }

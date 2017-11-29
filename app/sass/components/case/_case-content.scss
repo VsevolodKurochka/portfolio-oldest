@@ -1,0 +1,6 @@
+@include className('case'){
+	&__content{
+		position: relative;
+		border-bottom: 1px solid $color-brand-2;
+	}
+}

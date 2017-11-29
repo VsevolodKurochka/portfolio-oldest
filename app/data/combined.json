@@ -1,0 +1,41 @@
+{
+	"nav": [
+		{
+			"name": "seva",
+			"price": 69.95,
+			"notes": "Size 10"
+		}
+	],
+	"portfolio": {
+		"Wordpress": {
+			"info": {
+				"ID": "wordpress",
+				"Title": "wordpress",
+				"title": "wordpress"
+			},
+			"items": [
+				{
+					"image": "img/portfolio/item1.jpg",
+					"title": "Best Matchmaking22aaa2",
+					"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
+					"tag": "WP",
+					"link": "#"
+				},
+				{
+					"image": "img/portfolio/item2.jpg",
+					"title": "Best Matchmaking2",
+					"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
+					"tag": "WP",
+					"link": "#"
+				},
+				{
+					"image": "img/portfolio/item3.jpg",
+					"title": "Best Matchmaking3",
+					"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
+					"tag": "WP",
+					"link": "#"
+				}
+			]
+		}
+	}
+}

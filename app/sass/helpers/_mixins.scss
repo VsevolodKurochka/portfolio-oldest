@@ -91,3 +91,11 @@
 		@content;
 	}
 }
+
+@mixin font($font){
+	@if $font == 'general'{
+		font-family: 'Fira Sans Condensed', sans-serif;
+	}@else if $font == 'secondary'{
+		font-family: 'Playfair Display', serif;
+	}
+}

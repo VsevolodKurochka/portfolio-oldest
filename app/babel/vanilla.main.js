@@ -25,7 +25,6 @@
 
 (function(){
 	document.addEventListener("DOMContentLoaded", function(){
-
 		// Initialize Emmergency
 
 			emergence.init();
@@ -115,6 +114,14 @@
 					windowScroll > 0 ? addClass(jsNav, 'vnav_scrolled') : removeClass(jsNav, 'vnav_scrolled');
 
 				});
+
+				// const bubbles = document.getElementsByClassName('vskills__monitor-bubble');
+				// const bubblesLength = bubbles.length;
+				// for(let i = 0; i < bubblesLength; i++){
+				// 	// setInterval(function(){
+				// 	// 	console.log(bubbles[i].style.left);
+				// 	// },1000);
+				// }
 				// window.onscroll = onScroll;
 
 				// function onScroll() {

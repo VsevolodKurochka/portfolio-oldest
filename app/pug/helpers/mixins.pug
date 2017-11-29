@@ -22,7 +22,7 @@ mixin add-meta(title, description, url, image)
 		meta(property="og:image" content=image)
 		meta(itemprop="image" content=image)
 
-mixin menu-item(isLink,href, name)
+mixin menu-item(isLink, href, name)
 
 	- var menuItemClass = '';
 	if wordpress
@@ -35,3 +35,4 @@ mixin menu-item(isLink,href, name)
 			a( href=href )=name
 		else
 			block
+

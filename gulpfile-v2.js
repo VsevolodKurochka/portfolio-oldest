@@ -14,6 +14,9 @@ const fs 															= require('fs');
 const cache 													= require('gulp-cache');
 const merge 													= require('gulp-merge-json');
 
+const gs = gulp.series;
+const gp = gulp.parallel;
+
 // Sass dependencies
 const sass                            = require('gulp-sass');
 const sassGlob                        = require('gulp-sass-glob');
@@ -29,40 +32,8 @@ const babel                           = require('gulp-babel');
 gulp.src(['./package.json'])
 	.pipe(install())
 
-// Compile sass into CSS & auto-inject into browsers
-gulp.task('sass', () =>
-	gulp.src("app/sass/**/*.scss")
-		.pipe(sassGlob())
-		.pipe(sass({
-			outputStyle: 'expanded'
-		}).on('error', sass.logError))
-		
-		.pipe(csscomb())
-		.pipe(autoprefixer({
-			browsers: ['last 15 versions'],
-			cascade: false
-		}))
-		.pipe(gulp.dest("app/css"))
-		.pipe(browserSync.stream())
-);
-
-// PUG
-
-var locals = {
-	portfolio: JSON.parse(fs.readFileSync('app/data/portfolio.json')),
-	nav: JSON.parse(fs.readFileSync('app/data/nav.json')),
-};
-
-gulp.task('JSON', function() {
-	return gulp.src('app/data/**/*.json')
-    .pipe(merge())
-    .on('error', notify.onError({
-        title: 'JSOn Error',
-        message: '<%= error.message %>'
-    }))
-    .pipe(gulp.dest('app/data'));
-});
-gulp.task('templates', () =>
+// Compile Markup
+gulp.task('compile:markup', () => {
 	gulp.src('app/**/*.pug')
 		.pipe(gulpif(global.watch, emitty.stream(global.emittyChangedFile)))
 		.pipe(data( () => {
@@ -78,17 +49,11 @@ gulp.task('templates', () =>
         message: '<%= error.message %>'
     }))
 		.pipe(gulp.dest('app'))
-);
+});
 
-gulp.task('htmlbeautify', () =>
-	gulp.src('app/**/*.html')
-		.pipe(htmlbeautify())
-		.pipe(gulp.dest('app'))
-);
-
-// JS
-gulp.task('babel', function(){
-	return gulp.src('app/babel/**/*.js')
+// Compile JS
+gulp.task('compile:scripts', () => {
+	gulp.src('app/babel/**/*.js')
 		.pipe(babel({
 			presets: ['es2015']
 		})).on('error', notify.onError(function (error) {
@@ -97,11 +62,64 @@ gulp.task('babel', function(){
 		.pipe(gulp.dest('app/js'));
 });
 
+// Compile SASS
+gulp.task('compile:styles', () => {
+	gulp.src("app/sass/**/*.scss")
+		.pipe(sassGlob())
+		.pipe(sass({
+			outputStyle: 'expanded'
+		}).on('error', sass.logError))
+		
+		.pipe(csscomb())
+		.pipe(autoprefixer({
+			browsers: ['last 15 versions'],
+			cascade: false
+		}))
+		.pipe(gulp.dest("app/css"))
+		.pipe(browserSync.stream())
+});
 
-// Your "watch" task
-gulp.task('watch', () => {
+// Compile JSON
+gulp.task('compile:json', () => {
+	gulp.src('app/data/**/*.json')
+    .pipe(merge())
+    .pipe(gulp.dest('app/data'))
+});
 
-	cache.clearAll();
+
+// Watch Markup
+gulp.task('watch:markup', () => {
+	gulp.watch('app/**/*.pug', gulp.series('compile:markup'))
+		.on('all', (event, filepath) => {
+			global.emittyChangedFile = filepath;
+		});
+
+	gulp.watch("app/**/*.html").on('all', browserSync.reload);
+});
+
+// Watch JS
+gulp.task('watch:scripts', () => {
+	gulp.watch("app/babel/**/*.js", gulp.series('compile:scripts'));
+});
+
+// Watch SASS
+gulp.task('watch:styles', () => {
+	gulp.watch("app/sass/**/*.scss", gulp.series('compile:styles'));
+});
+
+// Watch JSON
+gulp.task('watch:json', () => {
+	gulp.watch("app/data/*.json").on('all', gulp.series('compile:json'));
+});
+
+gulp.task('compile:src', gp(
+  'compile:markup',
+  'compile:scripts',
+  'compile:styles',
+  'compile:json'
+));
+
+gulp.task('setup:server', () => {
 
 	// Shows that run "watch" mode
 	global.watch = true;
@@ -111,18 +129,18 @@ gulp.task('watch', () => {
 		notify: false
 	});
 
-	gulp.watch('app/**/*.pug', gulp.series('templates'))
-		.on('all', (event, filepath) => {
-			global.emittyChangedFile = filepath;
-		});
-
-	gulp.watch("app/**/*.html").on('all', browserSync.reload);
-
-	gulp.watch("app/data/*.json").on('all', gulp.series('JSON'));
-	
-	gulp.watch("app/sass/**/*.scss", gulp.series('sass'));
-
-	gulp.watch("app/babel/**/*.js", gulp.series('babel'));
 });
 
-gulp.task('default', gulp.series('watch'));
+gulp.task('server', gs('compile:src', 'setup:server'));
+
+gulp.task('watch', gp(
+  'watch:markup',
+  'watch:scripts',
+  'watch:styles',
+  'watch:json'
+));
+
+gulp.task('default', gp(
+  'server',
+  'watch'
+));
