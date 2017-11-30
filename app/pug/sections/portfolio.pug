@@ -18,19 +18,12 @@ include ../helpers/mixins
 				+e.content
 					for group in portfolio
 						+e.tab(class=group.info.status id='tab-' + group.info.ID)
-							+e.tab-header
-								+e.P.tab-title=group.info.title
 							+e.tab-content
 								.vrow
 									for groupItem in group.items
 										+case(groupItem.image, groupItem.title, groupItem.content, groupItem.tag, groupItem.link)
 							+e.tab-footer
-								+b.A.vbtn._cross._size-lg(href="#")
-									span.fl
-									span.sfl
-									span.cross
-									i
-									p Look more
+								+btn-cross('View all Projects', '#')
 			+e.ASIDE.list.widget__.vcol-12.vcol-sm-4.vcol-md-3
 				+e.item
 					+e.P.title Categories
@@ -38,4 +31,4 @@ include ../helpers/mixins
 						for group in portfolio
 							+e.LI.list-element
 								+e.A.list-element-link(class=group.info.status href="#tab-" + group.info.ID)=group.info.title
-		+e.P.letters-bg.letters-bg Perfection in detail
+		+e.P.letters-bg.letters-bg(data-emergence="hidden") Perfection in detail

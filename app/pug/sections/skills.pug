@@ -1,7 +1,24 @@
 include ../bem/index
 include ../helpers/config
-include ../helpers/sections/skills/data
-
+block variables
+	-
+		var skills = [
+			'HTML5',
+			'CSS3',
+			'LESS',
+			'Bootstrap',
+			'JS',
+			'jQ',
+			'Gulp',
+			'PHP',
+			'PUG',
+			'WP',
+			'Stylus',
+			'SASS',
+			'postCSS',
+			'REACT(study)'
+		];
+		
 +b.SECTION.skills.section-anchor#section-skills
 	+e.shape._right.shape__._brand-1._transparent(data-emergence="hidden")
 		+e.inner
@@ -22,4 +39,4 @@ include ../helpers/sections/skills/data
 					+e.monitor-list
 						for skill in skills
 							+e.monitor-list-element=skill
-		+e.P.letters-bg.letters-bg I am Perfect
+		+e.P.letters-bg.letters-bg(data-emergence="hidden") I am Perfect

@@ -1,0 +1,8 @@
+@include className('testimonial'){
+	padding-top: 45px;
+	padding-bottom: 45px;
+	@include resp-min(sm){
+		padding-top: 75px;
+		padding-bottom: 75px;
+	}
+}

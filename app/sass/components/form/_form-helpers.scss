@@ -1,20 +1,29 @@
 @mixin input-default(){
 	display: block;
-	padding: 15px;
+	padding: 15px 0;
 	width: 100%;
 	max-width: 100%;
 	color: #000;
 	text-align: left;
-	font-size: 15px;
+	font-size: 14px;
 	-webkit-appearance: none;
 	outline: none;
 	@include transition();
+	@include font('general');
 	@include placeholder{
 		@include transition();
 	}
+	&:focus{
+		@include placeholder{
+			color: transparent;
+		}
+	}
 }
 @mixin rowOffset(){
-	margin-bottom: 15px;
+	margin-bottom: 30px;
+	@include resp-min(sm){
+		margin-bottom: 45px;
+	}
 	&:last-child{
 		margin-bottom: 0;
 	}

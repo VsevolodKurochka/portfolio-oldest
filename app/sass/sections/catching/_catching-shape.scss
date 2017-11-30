@@ -1,0 +1,12 @@
+@include className('catching'){
+	&__shape{
+		&_left{
+			bottom: -15%;
+			left: -15%;
+		}
+		&_right{
+			top: -30%;
+			right: -15%;
+		}
+	}
+}

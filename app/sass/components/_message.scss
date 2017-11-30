@@ -1,0 +1,19 @@
+@include className('message'){
+	padding: 30px;
+	background-color: #fff;
+	@include resp-min(sm){
+		padding: 40px;
+	}
+	&_shadow{
+		box-shadow: 0px 15px 30px 0px rgba(0, 0, 0, 0.1);
+	}
+	&__title{
+		padding-bottom: 30px;
+		margin-bottom: 30px;
+		border-bottom: 1px solid $color-brand-2;
+		font: {
+			size: 24px;
+			weight: bold;
+		}
+	}
+}

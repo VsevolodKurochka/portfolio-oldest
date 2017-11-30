@@ -1,0 +1,29 @@
+include ../bem/index
+include ../helpers/config
++b.SECTION.testimonial#section-testimonial
+	+e.shape._left.shape__._brand-1._transparent(data-emergence="hidden")
+		+e.inner
+			+e.inner-shape._brand-1
+	+e.container.container
+		+e.row.vrow
+			.vcol-12.vcol-sm-6.vcol-md-7
+				+b.vtitle-group
+					+e.H3.title.vtitle-lg Customer Testimonials
+					+e.content
+						+b.P.title-md
+							| Customers are always happy. They know that 
+							+b.SPAN.highlight Vsevolod Kurochka 
+							| is the key to success and quality. Here are some confirmations to this.
+			.vcol-12.vcol-sm-6.vcol-md-5
+				+e.items-wrapper
+					+e.item
+						+e.item-header
+							+e.item-image-wrapper
+								+e.item-image(src="img/testimonial/item1.jpg")
+						+e.item-body
+							+e.item-body-content
+								p Man is the word! He said he did. It's nice to work, I advise everyone.
+						+e.item-footer
+							+e.P.item-title Dmitry Kirpach
+							+e.P.item-subtitle CEO&amp;Founder
+	+e.P.letters-bg.letters-bg(data-emergence="hidden") To be the best

@@ -54,4 +54,25 @@ mixin case(image, title, content, tag, link)
 							i
 							p Visit
 
-//mixin btn-cross()
+// class="_size-lg"
+mixin btn-cross(title, type, href)
+	- var defaultHref = '';
+	if href
+		- defaultHref = href;
+	else
+		- defaultHref = '#';
+	
+	if type === "link"
+		+b.A.vbtn._cross(href=defaultHref)&attributes(attributes)
+			span.fl
+			span.sfl
+			span.cross
+			i
+			p=title
+	else if type === 'button'
+		+b.BUTTON.vbtn._cross&attributes(attributes)
+			span.fl
+			span.sfl
+			span.cross
+			i
+			p=title

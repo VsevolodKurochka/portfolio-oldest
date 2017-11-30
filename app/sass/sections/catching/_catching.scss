@@ -1,7 +1,5 @@
-@include className('intro'){
+@include className('catching'){
 	position: relative;
-	padding-top: 75px;
-	padding-bottom: 120px;
 	z-index: 1;
 	&:before{
 		@include pseudo();
@@ -10,7 +8,7 @@
 		width: 120%;
 		height: 100%;
 		background-color: $color-brand-2;
-		transform: rotate(-5deg);
+		transform: rotate(5deg);
 		z-index: -1;
 	}
 	@include resp-min(sm){
@@ -19,8 +17,10 @@
 			top: -100px;
 		}
 	}
+	padding-top: 45px;
+	padding-bottom: 60px;
 	@include resp-min(md){
-		padding-top: 200px;
-		padding-bottom: 150px;
+		padding-top: 90px;
+		padding-bottom: 220px;
 	}
 }

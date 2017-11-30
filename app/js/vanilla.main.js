@@ -160,6 +160,17 @@ var exists = function exists(element) {
 
 		makeTabs("#portfolio-tabs");
 
+		// Scrolling and Transform Background Elements
+		// const lettersBg = document.getElementsByClassName('vletters-bg');
+		// const lettersBgLength = lettersBg.length;
+		// window.onscroll = function(){
+		// 	let scrollY = this.scrollY;
+		// 	log(scrollY);
+		// 	for(let i = 0; i < lettersBgLength; i++){
+		// 		lettersBg[i].style.transform = `translateY(${ scrollY / 2 }px)`;
+		// 	}
+		// }
+
 		// const bubbles = document.getElementsByClassName('vskills__monitor-bubble');
 		// const bubblesLength = bubbles.length;
 		// for(let i = 0; i < bubblesLength; i++){

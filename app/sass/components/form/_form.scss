@@ -2,6 +2,7 @@
 	$self: &;
 	width: 100%;
 	&__row{
+		position: relative;
 		#{$self}_block &{
 			@include rowOffset();
 		}
@@ -37,6 +38,7 @@
 	@if( $themeFormDesign == 'new' ){
 		&__control{
 			@include input-default();
+			background-color: transparent;
 			border: none;
 		}
 		&__line{
@@ -45,10 +47,10 @@
 			bottom: 0;
 			height: 1px;
 			width: 0;
-			background-color: $color-modal-main;
+			background-color: $color-brand-1;
 			@include transition();
 		}
-		input:focus + &__line{
+		&__control:focus + &__line{
 			width: 100%;
 		}
 		&__row_line{
@@ -58,14 +60,9 @@
 				bottom: 0;
 				height: 1px;
 				width: 100%;
-				background-color: $color-modal-main;
+				background-color: darken($color-brand-2, 15%);
 			}
 		}
-		@include resp-min(xs){
-			&__row{
-				margin-top: 30px;
-			}
-		}	
 	}@else{
 		&__control{
 			@include input-default();
