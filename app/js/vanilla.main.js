@@ -1,6 +1,7 @@
 'use strict';
 
 // General functions
+
 function log(logText) {
 	console.log(logText);
 }
@@ -115,6 +116,49 @@ var exists = function exists(element) {
 			var windowScroll = this.scrollY;
 			windowScroll > 0 ? addClass(jsNav, 'vnav_scrolled') : removeClass(jsNav, 'vnav_scrolled');
 		});
+
+		// Vanilla Tabs
+
+		function makeTabs(selector) {
+
+			var tab_lists_anchors = document.querySelectorAll(selector + " .vtabs__list li a");
+			var divs = document.querySelector(selector + " .vtabs__content").getElementsByClassName("vtabs__tab");
+
+			for (var i = 0; i < tab_lists_anchors.length; i++) {
+				if (tab_lists_anchors[i].classList.contains('vactive')) {
+					//divs[i].style.display = "block";
+					addClass(divs[i], 'vactive');
+				}
+			}
+
+			for (i = 0; i < tab_lists_anchors.length; i++) {
+
+				tab_lists_anchors[i].addEventListener('click', function (e) {
+
+					e.preventDefault();
+
+					for (i = 0; i < divs.length; i++) {
+						//divs[i].style.display = "none";
+						removeClass(divs[i], 'vactive');
+					}
+
+					for (i = 0; i < tab_lists_anchors.length; i++) {
+						removeClass(tab_lists_anchors[i], 'vactive');
+						//tab_lists_anchors[i].classList.remove("vactive");
+					}
+
+					var clicked_tab = e.target || e.srcElement;
+
+					clicked_tab.classList.add('vactive');
+					var div_to_show = clicked_tab.getAttribute('href');
+
+					//document.querySelector(div_to_show).style.display = "block";
+					addClass(document.querySelector(div_to_show), 'vactive');
+				});
+			}
+		}
+
+		makeTabs("#portfolio-tabs");
 
 		// const bubbles = document.getElementsByClassName('vskills__monitor-bubble');
 		// const bubblesLength = bubbles.length;

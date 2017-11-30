@@ -23,9 +23,9 @@
   @extend %btn-placeholder;
   &_cross{
     background-color: transparent;
-    
     border-right: 2px solid $color-brand-1;
     border-bottom: 2px solid $color-brand-1;
+    color: inherit;
     &:before,
     &:after{
       @include pseudo();

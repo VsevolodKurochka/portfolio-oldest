@@ -12,9 +12,9 @@
 				opacity: 0.3;
 				@include transition();
 				&:hover,
-				&_active{
+				&.vactive{
 					opacity: 1;
-					transform: translateX(15px);
+					transform: translateX(5px);
 				}
 			}
 		}
