@@ -1,5 +1,13 @@
 include ../bem/index
 include ../helpers/config
-
+include ../components/social
 +b.FOOTER.site-footer#colophon
-	+b.container
+	+e.container
+		+e.row
+			.col-12.col-sm-8
+				+e.menu
+					ul
+						for item in navigation
+							+menu-item('true', item.link, item.name)
+			.col-12.col-sm-4
+				+social('_big')

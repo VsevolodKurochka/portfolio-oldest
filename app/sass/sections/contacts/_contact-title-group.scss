@@ -1,0 +1,10 @@
+@include className('contacts'){
+	&__title{
+		&-group{
+			position: relative;
+			@include resp-min(lg){
+				left: -65px;
+			}
+		}
+	}
+}

@@ -1,0 +1,10 @@
+@include className('contacts'){
+	&__letters-bg{
+		bottom: 0;
+		right: 0;
+		text-align: right;
+		@include resp-min(md){
+			bottom: -100px;
+		}
+	}
+}

@@ -2,7 +2,7 @@ include ../bem/index
 include ../helpers/config
 include ../helpers/data
 include ../helpers/mixins
-
+include ../components/social
 +b.fixed._md-top
 	+b.nav._style#js-navigation
 		+e.container.container
@@ -20,6 +20,4 @@ include ../helpers/mixins
 						for item in navigation
 							+menu-item('true', item.link, item.name)
 				+e.addition
-					+e.A.addition-link(href="tel: +38 (063) 505 62 63")
-						+e.I.addition-link-icon.fa.fa-2x.fa-mobile(aria-hidden="true")
-						+e.SPAN.addition-link-text +38 (063) 505 62 63
+					+social

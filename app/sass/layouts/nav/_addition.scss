@@ -25,7 +25,7 @@
 			order: 3;
 			color: $color-black;
 			&-link{
-				&-icon{
+				&:not(:last-child){
 					margin-right: 15px;
 				}
 			}
