@@ -1,9 +1,12 @@
 {
   "nav": [
     {
-      "name": "seva",
-      "price": 69.95,
-      "notes": "Size 10"
-    }
+			"name": "About Me",
+			"link": "#section-about"
+		},
+		{
+			"name": "Technologies",
+			"link": "#section-skills"
+		}
   ]
 }

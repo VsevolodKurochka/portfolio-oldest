@@ -1,0 +1,6 @@
+@include className('site-footer'){
+	&__copyright{
+		opacity: 0.3;
+		text-transform: uppercase;
+	}
+}
