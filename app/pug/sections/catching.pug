@@ -1,5 +1,6 @@
 include ../bem/index
 include ../helpers/config
+include ../components/form
 +b.SECTION.catching#section-catching
 	+e.shape._left.shape__._brand-1._transparent(data-emergence="hidden")
 		+e.inner
@@ -19,4 +20,4 @@ include ../helpers/config
 					+e.header
 						+e.P.title Send me message
 					+e.body
-						include ../components/form
+						+form()

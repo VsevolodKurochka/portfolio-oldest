@@ -41,23 +41,24 @@ $hamburger-line-height: 4px;
 		@extend %hamburger-transition;
 		span{
 			display: block;
-			position: absolute;
-			left: 0;
+
 			width: $hamburger-line-width;
 			height: $hamburger-line-height;
 			background-color: $color-white;
 			@extend %hamburger-transition;
 			&:nth-child(1){
-				top: 0;
-				transform-origin: 3px 5px;
+				animation: outT 0.8s backwards;
+				animation-direction: reverse;
 			}
 			&:nth-child(2){
-				top: 8px;
-				opacity: 1;
+				margin-top: 4px;
+				margin-bottom: 4px;
+				animation: outM 0.8s backwards;
+				animation-direction: reverse;
 			}
 			&:nth-child(3){
-				top: 16px;
-				transform-origin: 1px -1px;
+				animation: outBtm 0.8s backwards;
+				animation-direction: reverse;
 			}
 		}
 	}	
@@ -72,14 +73,75 @@ $hamburger-line-height: 4px;
 	&.active &__lines{
 		span{
 			&:nth-child(1){
-				transform: rotate(45deg);
+				animation: inT 0.8s forwards;
 			}
 			&:nth-child(2){
-				transform: translateX(-60px);
-				opacity: 0; 
+				animation: inM 0.8s forwards;
 			}
 			&:nth-child(3){
-				transform: rotate(-45deg);	
+				animation: inBtm 0.8s forwards;
+			}
+		}
+	}
+	@at-root{
+		@keyframes inM{
+			50%{
+				transform:rotate(0deg);
+			}
+			100%{
+				transform:rotate(45deg);
+			}
+		}
+		@keyframes outM{
+			50%{
+				transform:rotate(0deg);
+			}
+			100%{
+				transform:rotate(45deg);
+			}
+		}
+		@keyframes inT{
+			0%{
+				transform: translateY(0px) rotate(0deg);
+			}
+			50%{
+				transform: translateY(9px) rotate(0deg);
+			}
+			100%{
+				transform: translateY(8px) rotate(135deg);
+			}
+		}
+		@keyframes outT{
+			0%{
+				transform: translateY(0px) rotate(0deg);
+			}
+			50%{
+				transform: translateY(9px) rotate(0deg);
+			}
+			100%{
+				transform: translateY(9px) rotate(135deg);
+			}
+		}
+		@keyframes inBtm{
+			0%{
+				transform: translateY(0px) rotate(0deg);
+			}
+			50%{
+				transform: translateY(-7px) rotate(0deg);
+			}
+			100%{
+				transform: translateY(-8px) rotate(135deg);
+			}
+		}
+		@keyframes outBtm{
+			0%{
+				transform: translateY(0px) rotate(0deg);
+			}
+			50%{
+				transform: translateY(-9px) rotate(0deg);
+			}
+			100%{
+				transform: translateY(-9px) rotate(135deg);
 			}
 		}
 	}

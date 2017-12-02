@@ -9,9 +9,11 @@
 	}
 	@include resp-max(md){
 		margin-bottom: 10px;
-		a{
-			padding: 10px 15px;
-			color: $color-white;
+		.#{$themeNav}_style &{
+			a{
+				padding: 10px 15px;
+				color: $color-white;
+			}
 		}
 	}
 	@include resp-min(md){

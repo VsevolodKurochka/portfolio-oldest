@@ -7,6 +7,14 @@
 		{
 			"name": "Technologies",
 			"link": "#section-skills"
+		},
+		{
+			"name": "Projects",
+			"link": "#section-projects"
+		},
+		{
+			"name": "Contact Me",
+			"link": "#section-contact"
 		}
 	],
 	"portfolio": {
