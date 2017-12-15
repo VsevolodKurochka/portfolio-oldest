@@ -26,14 +26,10 @@
 
 (function(){
 	document.addEventListener("DOMContentLoaded", function(){
+
 		// Initialize Emmergency
 
 			emergence.init();
-
-		const classes = {
-			active: 'active',
-			menuActive: 'vnav__menu_active'
-		}
 
 		// Anchors links
 			function scrollTo(element, to, duration) {
@@ -82,8 +78,8 @@
 						let vnavhref = this.getAttribute("href").replace("#", "");
 						let vnavscrollAnchor = document.getElementById(vnavhref);
 
-						removeClass(jsNavBtn, classes.active);
-						removeClass(jsNavMenu, classes.menuActive);
+						removeClass(jsNavBtn, 'active');
+						removeClass(jsNavMenu, 'vnav__menu_active');
 
 						scrollTo(document.body, vnavscrollAnchor.offsetTop, 600);
 
@@ -95,8 +91,8 @@
 
 				if(exists(jsNavBtn)){
 					jsNavBtn.addEventListener('click', function(){
-						toggleClass(this, classes.active);
-						toggleClass(jsNavMenu, classes.menuActive);
+						toggleClass(this, 'active');
+						toggleClass(jsNavMenu, 'vnav__menu_active');
 					});
 				}
 
@@ -119,48 +115,209 @@
 			// Vanilla Tabs
 
 			function makeTabs(selector) {
-			 		
-			    let tab_lists_anchors = document.querySelectorAll(selector + " .vtabs__list li a");
-			    let divs = document.querySelector(selector + " .vtabs__content").getElementsByClassName("vtabs__tab");
+					
+					let tab_lists_anchors = document.querySelectorAll(selector + " .vtabs__list li a");
+					let divs = document.querySelector(selector + " .vtabs__content").getElementsByClassName("vtabs__tab");
 
-			    for (var i = 0; i < tab_lists_anchors.length; i++) {
-			        if (tab_lists_anchors[i].classList.contains('vactive')) {
-			            //divs[i].style.display = "block";
-			            addClass(divs[i], 'vactive');
-			        }
+					for (var i = 0; i < tab_lists_anchors.length; i++) {
+							if (tab_lists_anchors[i].classList.contains('vactive')) {
+									//divs[i].style.display = "block";
+									addClass(divs[i], 'vactive');
+							}
 			 
-			    }
+					}
 			 
-			    for (i = 0; i < tab_lists_anchors.length; i++) {
+					for (i = 0; i < tab_lists_anchors.length; i++) {
 			 
-			        tab_lists_anchors[i].addEventListener('click', function(e) {
+							tab_lists_anchors[i].addEventListener('click', function(e) {
 
-			        		e.preventDefault();
+									e.preventDefault();
 			 
-			            for (i = 0; i < divs.length; i++) {
-			                //divs[i].style.display = "none";
-			                removeClass(divs[i], 'vactive');
-			            }
+									for (i = 0; i < divs.length; i++) {
+											//divs[i].style.display = "none";
+											removeClass(divs[i], 'vactive');
+									}
 			 
-			            for (i = 0; i < tab_lists_anchors.length; i++) {
-			            		removeClass(tab_lists_anchors[i], 'vactive');
-			                //tab_lists_anchors[i].classList.remove("vactive");
-			            }
+									for (i = 0; i < tab_lists_anchors.length; i++) {
+											removeClass(tab_lists_anchors[i], 'vactive');
+											//tab_lists_anchors[i].classList.remove("vactive");
+									}
 			 
-			            let clicked_tab = e.target || e.srcElement;
+									let clicked_tab = e.target || e.srcElement;
 			 
-			            clicked_tab.classList.add('vactive');
-			            let div_to_show = clicked_tab.getAttribute('href');
+									clicked_tab.classList.add('vactive');
+									let div_to_show = clicked_tab.getAttribute('href');
 			 
-			            //document.querySelector(div_to_show).style.display = "block";
-			            addClass(document.querySelector(div_to_show), 'vactive');
+									//document.querySelector(div_to_show).style.display = "block";
+									addClass(document.querySelector(div_to_show), 'vactive');
 			 
-			        });
-			    }
+							});
+					}
 			 
 			}
 
 			makeTabs("#portfolio-tabs");
+
+			// Skills
+				// Define wrapper
+				const skillsWrapper = document.getElementById('vskills-items');
+
+				// Define skills fragment
+				const skillsFragment = document.createDocumentFragment();
+
+				// Define skills array
+				const skillsList = [
+					'HTML5',
+					'CSS3',
+					'LESS',
+					'Bootstrap - v.3, v.4',
+					'JavaScript - ES6',
+					'jQuery',
+					'Gulp - v.3, v.4',
+					'PHP',
+					'PUG',
+					'Wordpress',
+					'Stylus',
+					'SASS'
+				];
+				const skillsListLength = skillsList.length;
+
+				// Functions
+				function shuffle(a) {
+					for (let i = a.length - 1; i > 0; i--) {
+						const j = Math.floor(Math.random() * (i + 1));
+						[a[i], a[j]] = [a[j], a[i]];
+					}
+					return a;
+				}
+
+
+				function offset(el) {
+					let top = el.offsetTop;
+					let left = el.offsetLeft;
+
+					return {
+						top,
+						left
+					}
+				}
+
+				function createRandomArray(min, max){
+					let myList = [];
+					
+					for (let i = min; i < max; i++) {
+						myList.push(i);
+					}
+
+					myList.sort(function (a, b) {
+						return Math.round(Math.random() * 2) - 1;
+					});
+
+					return myList;
+				}
+
+				function createElements(options, callback){
+					for(var i = 0; i < skillsList.length; i++){
+
+						// Create `li` element
+						let li = document.createElement(options.tag);
+
+						// Add class for added `li` element
+						addClass(li, options.class);
+
+						// Add content from array list
+						li.textContent = skillsList[i];
+
+						// Add skill to fragment
+						skillsFragment.appendChild(li);
+
+					}
+
+					// Add fragment to our div
+					skillsWrapper.appendChild(skillsFragment);
+
+					if (callback && typeof(callback) == "function"){
+						callback();
+					}
+				}
+
+				// function shuffleList(array, element, text, collectOfDataElements){
+
+				// 	// Argument 1 - array will be shuffled
+				// 	// Argument 2 - element for setting text
+				// 	// Argument 3 - text for element
+				// 	// Argument 4 - collection of data(position top and left) of element
+
+				// 	shuffle(array);
+					
+				// 	let randomArray = createRandomArray(0, 15);
+
+				// 	//console.log(randomArray);
+
+				// 	for(var i = 0; i < array.length; i++){
+				// 		element[i].textContent = text[i];
+
+						
+
+				// 		let randomArrayCurrentNumber = randomArray[i];
+
+						
+
+				// 		element[i].style.left = collectOfDataElements[randomArrayCurrentNumber].left + "px";
+				// 		element[i].style.top = collectOfDataElements[randomArrayCurrentNumber].top + "px";
+
+				// 	}
+				// }
+
+				createElements({
+					'tag': 'li',
+					'class': 'vskills__item'
+				});
+
+				// Get created items
+				const skillsItems = document.getElementsByClassName('vskills__item');
+				//console.log(skillsItems);
+
+				// Get created items length
+				const skillInfo = [];
+
+				// Get offset of each element
+				for(var i = 0; i < skillsItems.length; i++){
+
+					// Get offset from parent, when they have position relative
+					skillInfo.push( offset(skillsItems[i]) );
+					
+				}
+
+				for(var i = 0; i < skillsItems.length; i++){
+
+					// Set element to position absolute
+					skillsItems[i].style.position = 'absolute';
+				}
+				
+				function shuffleList(){
+					shuffle(skillsList);
+					
+					let randomArray = createRandomArray(0, 12);
+
+					for(var i = 0; i < skillsItems.length; i++){
+						skillsItems[i].textContent = skillsList[i];
+
+						let randNumber = randomArray[i];
+
+						skillsItems[i].style.left = skillInfo[randNumber].left + "px";
+						skillsItems[i].style.top = skillInfo[randNumber].top  + "px";
+
+					}
+				}
+
+				shuffleList();
+
+				setInterval(function(){
+					shuffleList();
+				}, 3000);
+
+
 
 
 			// Scrolling and Transform Background Elements
@@ -209,7 +366,7 @@
 				//             previousRefElement.classList.add("active");
 				//             break;
 				//         }
-				        
+								
 				//     }
 				// }
 				// var section = document.querySelectorAll(".vsection-anchor");
@@ -231,14 +388,14 @@
 			 //    var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
 			 //    for (i in sections) {
 			 //    	for(let j = 0; j < jsNavLinksLength; j++){
-		  //     		if( hasClass(jsNavLinks[i], 'highlight') ) removeClass(jsNavLinks[i], 'highlight');
-		  //     	}
+			//     		if( hasClass(jsNavLinks[i], 'highlight') ) removeClass(jsNavLinks[i], 'highlight');
+			//     	}
 			 //      if (scrollPosition >= sections[i].top && scrollPosition <= sections[i].bottom ) {
 			 //      	// if( exists(document.querySelector('.vnav__menu .active')) ){
 			 //      	// 	document.querySelector('.vnav__menu .active').setAttribute('class', '');
 			 //      	// }
-			      	
-    // 					document.querySelector('.vnav__menu a[href*="' + i + '"]').setAttribute('class', 'highlight');
+							
+		// 					document.querySelector('.vnav__menu a[href*="' + i + '"]').setAttribute('class', 'highlight');
 			 //      }
 			 //    }
 			 //  };

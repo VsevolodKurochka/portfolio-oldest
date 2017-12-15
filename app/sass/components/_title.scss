@@ -60,14 +60,10 @@ $sizes: (
 		@include fs('vtitle-xlg');
 		@extend %vtitle-default;
 	}
-	// &-xxlg{
-	// 	line-height: 1.1;
-	// 	font-size: 30px;
-	// 	@include fs('vtitle-xxlg');
-	// 	@extend %vtitle-default;
-	// }
 	&-group{
+		margin-bottom: 30px;
 		@include resp-min(sm){
+			margin-bottom: 45px;
 			&_inline{
 				display: flex;
 				align-items: center;

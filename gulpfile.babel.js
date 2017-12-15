@@ -97,14 +97,6 @@ gulp.task('templates', () =>
 
 // JS
 
-gulp.task('browserify', function() {
-	return browserify('app/babel/app.js')
-		.transform("babelify", {presets: ["es2015"]})
-		.bundle()
-		.pipe(source('bundle.js'))
-		.pipe(gulp.dest('app/js'));
-});
-
 
 gulp.task('babel', () => 
 	gulp.src('app/babel/**/*.js')
@@ -138,8 +130,6 @@ gulp.task('watch', () => {
 	gulp.watch("app/sass/**/*.scss", gulp.series('sass'));
 
 	gulp.watch("app/babel/**/*.js", gulp.series('babel'));
-
-	gulp.watch("app/babel/app.js", gulp.series('browserify'));
 
 	gulp.watch("app/data/*.json").on('all', gulp.series('JSON'));
 

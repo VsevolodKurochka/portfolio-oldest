@@ -1,5 +1,6 @@
 include ../bem/index
 include ../helpers/config
+include ../helpers/mixins
 +b.SECTION.about.section-anchor#section-about
 	+e.container.container
 		+b.row
@@ -17,10 +18,5 @@ include ../helpers/config
 							+b.SPAN.highlight._brand-1 web-developer
 							| , freelancer from Cherkassy. I have more than 3.5 years experience in creating websites. I am proud of every project, that touched my hands.
 						+e.content-footer
-							+b.BUTTON.vbtn._cross._size-lg
-								span.fl
-								span.sfl
-								span.cross
-								i
-								p Download resume
+							+btn-cross('My resume', 'button')(class="_size-lg")
 		+e.P.letters-bg.letters-bg(data-emergence="hidden") Web Developer

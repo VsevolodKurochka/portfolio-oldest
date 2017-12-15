@@ -19,8 +19,17 @@
 				}
 			}
 		}
+		&-list{
+			list-style: none;
+		}
 		@include resp-min(md){
-			order: 1;
+			&-list{
+				display: inline-block;
+				vertical-align: middle;
+				&:not(:last-child){
+					margin-right: 45px;
+				}
+			}
 		}
 	}
 }

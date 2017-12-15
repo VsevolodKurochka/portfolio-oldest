@@ -14,21 +14,17 @@ include ../helpers/mixins
 					+b.SPAN.highlight._brand-1 3 years of work
 					| , I have collected many projects that I can share with you. For each project, I made considerable efforts to ensure that everyone was happy!
 		+e.row.row.tabs__#portfolio-tabs
-			.vcol-12.vcol-sm-8.vcol-md-9
-				+e.content
-					for group in portfolio
-						+e.tab(class=group.info.status id='tab-' + group.info.ID)
-							+e.tab-content
-								.vrow
-									for groupItem in group.items
-										+case(groupItem.image, groupItem.title, groupItem.content, groupItem.tag, groupItem.link)
-							+e.tab-footer
-								+btn-cross('View all Projects', '#')
-			+e.ASIDE.list.widget__.vcol-12.vcol-sm-4.vcol-md-3
-				+e.item
-					+e.P.title Categories
-					+e.UL.list
-						for group in portfolio
-							+e.LI.list-element
-								+e.A.list-element-link(class=group.info.status href="#tab-" + group.info.ID)=group.info.title
+			+e.UL.list.portfolio__tabs-list
+				for group in portfolio
+					li
+						a(class=group.info.status href="#tab-" + group.info.ID)=group.info.title
+			+e.content
+				for group in portfolio
+					+e.tab(class=group.info.status id='tab-' + group.info.ID)
+						+e.tab-content
+							.vrow
+								for groupItem in group.items
+									+case(groupItem.image, groupItem.title, groupItem.content, groupItem.tag, groupItem.link)
+						+e.tab-footer
+							+btn-cross('View all Projects', '#')
 		+e.P.letters-bg.letters-bg(data-emergence="hidden") Perfection

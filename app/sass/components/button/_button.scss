@@ -231,7 +231,6 @@
   }
   &_size{
     &-lg{
-      font-size: 16px;
       @include btn-size($btn-large-padding, $btn-large-size);
     }
   }

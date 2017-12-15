@@ -1,23 +1,5 @@
 include ../bem/index
 include ../helpers/config
-block variables
-	-
-		var skills = [
-			'HTML5',
-			'CSS3',
-			'LESS',
-			'Bootstrap',
-			'JS',
-			'jQ',
-			'Gulp',
-			'PHP',
-			'PUG',
-			'WP',
-			'Stylus',
-			'SASS',
-			'postCSS',
-			'REACT(study)'
-		];
 		
 +b.SECTION.skills.section-anchor#section-skills
 	+e.shape._right.shape__._brand-1._transparent(data-emergence="hidden")
@@ -32,11 +14,7 @@ block variables
 						+b.P.title-md
 							| And what can you be 
 							+b.SPAN.highlight._brand-1 proud of?
-		+e.monitor
-			+e.monitor-inner
-				+e.IMG.monitor-img(src="img/skills/monitor.png")
-				+e.monitor-area
-					+e.monitor-list
-						for skill in skills
-							+e.monitor-list-element=skill
+		+e.items-wrapper
+			+e.UL.items#vskills-items
+
 		+e.P.letters-bg.letters-bg(data-emergence="hidden") So much

@@ -16,8 +16,10 @@ include ../components/social
 					+e.logo-content
 						+e.P.logo-content-text Kurochka
 				+e.NAV.menu#js-navigation-menu
-					ul
+					+e.UL.menu-list
 						for item in nav
 							+menu-item('true', item.link, item.name)
-				+e.addition
-					+social
+					+e.UL.menu-list
+						li
+							+btn-cross('Contact me', 'button')
+					
