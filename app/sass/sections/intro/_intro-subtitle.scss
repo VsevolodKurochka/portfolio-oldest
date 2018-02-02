@@ -3,11 +3,8 @@
 		position: relative;
 		font-weight: 300;
 		line-height: 1.4;
-		@include resp-min(lg){
-			left: -15px;
-		}
-		@include resp-min(xlg){
-			left: -125px;
-		}
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		padding-left: 5px;
 	}
 }

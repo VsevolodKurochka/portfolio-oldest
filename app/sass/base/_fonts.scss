@@ -6,10 +6,11 @@
 	@include font('secondary');
 }
 $font-weights: (
-	'font-weight-regular' : 400,
-	'font-weight-light'   : 300,
-	'font-weight-bold'    : 700,
-	'font-weight-heavy'   : 900
+	'font-weight-regular' 			: 400,
+	'font-weight-extra-light'   : 200,
+	'font-weight-light'   			: 300,
+	'font-weight-bold'    			: 700,
+	'font-weight-heavy'   			: 900
 );
 
 @each $name, $weight in $font-weights{
