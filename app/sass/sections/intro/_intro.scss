@@ -3,18 +3,17 @@
 	padding-top: 75px;
 	padding-bottom: 120px;
 	z-index: 1;
+	color: #f7f7f7;
 	&:before{
 		@include pseudo();
 		left: -50px;
 		top: -50px;
 		width: 120%;
 		height: 100%;
-		background-color: $color-brand-2;
+		background-color: $color-general;
 		transform: rotate(-5deg);
 		z-index: -1;
-	}
-	@include resp-min(sm){
-		&:before{
+		@include resp-min(sm){
 			left: -100px;
 			top: -100px;
 		}

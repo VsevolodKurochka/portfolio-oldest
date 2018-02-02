@@ -891,10 +891,12 @@ b,
   .vnav {
     padding-top: 35px;
     padding-bottom: 35px;
+    color: #fff;
   }
   .vnav_scrolled {
     padding-top: 15px;
     padding-bottom: 15px;
+    color: #000;
     background-color: #fff;
     -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, .26);
     box-shadow: 0 2px 5px rgba(0, 0, 0, .26);
@@ -985,7 +987,7 @@ b,
     width: 0;
     height: 2px;
     content: "";
-    background-color: #ff5722;
+    background-color: #dc6058;
   }
   .vnav__menu-item a:before {
     left: 0;
@@ -1389,11 +1391,11 @@ b,
 }
 
 .color-brand-1 {
-  color: #ff5722;
+  color: #dc6058;
 }
 
 .bg-brand-1 {
-  background-color: #ff5722;
+  background-color: #dc6058;
 }
 
 .offset-static-xs {
@@ -1466,15 +1468,15 @@ b,
 .vbtn_cross {
   color: inherit;
   background-color: transparent;
-  border-right: 2px solid #ff5722;
-  border-bottom: 2px solid #ff5722;
+  border-right: 2px solid #dc6058;
+  border-bottom: 2px solid #dc6058;
 }
 
 .vbtn_cross:before, .vbtn_cross:after {
   position: absolute;
   z-index: 10;
   content: "";
-  background-color: #ff5722;
+  background-color: #dc6058;
   -webkit-transition: .5s;
   -o-transition: .5s;
   transition: .5s;
@@ -1504,7 +1506,7 @@ b,
   z-index: 2;
   width: 0;
   height: 100%;
-  background: #ff5722;
+  background: #dc6058;
   -webkit-transition: .5s;
   -o-transition: .5s;
   transition: .5s;
@@ -1515,7 +1517,7 @@ b,
 
 .vbtn_cross .sfl {
   z-index: 1;
-  background: #d53300;
+  background: #bf3128;
   -webkit-transition: .7s;
   -o-transition: .7s;
   transition: .7s;
@@ -1592,7 +1594,7 @@ b,
   height: 20px;
   margin: -10px -1px;
   content: "";
-  background: #ff5722;
+  background: #dc6058;
 }
 
 .vbtn_cross i:before {
@@ -1656,7 +1658,7 @@ b,
   width: 0;
   height: 50%;
   content: "";
-  background-color: #ff5722;
+  background-color: #dc6058;
   opacity: 0;
   -webkit-transition-timing-function: cubic-bezier(.86, 0, .07, 1);
   -o-transition-timing-function: cubic-bezier(.86, 0, .07, 1);
@@ -1705,7 +1707,7 @@ b,
   height: 100%;
   margin: -8px 0;
   content: "";
-  background: #ff5722;
+  background: #dc6058;
   -webkit-transition: .4s;
           -o-transition: .4s;
           transition: .4s;
@@ -1892,7 +1894,7 @@ b,
   left: 0;
   width: 0;
   height: 1px;
-  background-color: #ff5722;
+  background-color: #dc6058;
   -webkit-transition: all ease .5s;
   -o-transition: all ease .5s;
   transition: all ease .5s;
@@ -2108,8 +2110,12 @@ b,
   transform: scale3d(1, 1, 1) translateZ(0);
 }
 
+.vshape__inner-shape_white {
+  background-color: #fff;
+}
+
 .vshape__inner-shape_brand-1 {
-  background-color: #ff5722;
+  background-color: #dc6058;
 }
 
 .vshape[data-emergence="visible"] .vshape__inner {
@@ -2190,7 +2196,7 @@ b,
   padding: 1px 7.5px;
   margin-right: 2px;
   font-weight: bold;
-  background-color: #ff5722;
+  background-color: #dc6058;
 }
 
 .site-content {
@@ -2350,7 +2356,7 @@ b,
 }
 
 .vcase__subtitle:hover {
-  color: #ff5722;
+  color: #dc6058;
 }
 
 .vcase__title {
@@ -2368,7 +2374,7 @@ b,
 }
 
 .vcase__title:hover {
-  color: #ff5722;
+  color: #dc6058;
 }
 
 .vcase:not(:last-child) {
@@ -2461,8 +2467,8 @@ b,
 }
 
 .vsocial__item-link:hover {
-  color: #ff5722;
-  border-color: #ff5722;
+  color: #dc6058;
+  border-color: #dc6058;
 }
 
 @media (min-width: 768px) {
@@ -2516,7 +2522,7 @@ b,
   width: 100%;
   height: 100%;
   content: "";
-  background-color: #ff5722;
+  background-color: #dc6058;
   -webkit-border-radius: 100%;
   border-radius: 100%;
   opacity: .5;
@@ -2669,7 +2675,7 @@ b,
 }
 
 .vcontacts__info-element-link:hover {
-  color: #ff5722;
+  color: #dc6058;
 }
 
 .vcontacts__info-element-link-icon + .vcontacts__info-element-link-text {
@@ -2698,6 +2704,7 @@ b,
 
 .vintro__shape_main {
   left: -100px;
+  opacity: .5;
 }
 
 @media (max-width: 767px) {
@@ -2749,6 +2756,7 @@ b,
   z-index: 1;
   padding-top: 75px;
   padding-bottom: 120px;
+  color: #f7f7f7;
 }
 
 .vintro:before {
@@ -2759,7 +2767,7 @@ b,
   width: 120%;
   height: 100%;
   content: "";
-  background-color: #f8f8f8;
+  background-color: #3a3a3a;
   -webkit-transform: rotate(-5deg);
   -ms-transform: rotate(-5deg);
   transform: rotate(-5deg);
@@ -2859,11 +2867,11 @@ b,
 }
 
 .vportfolio__tabs-list a:hover {
-  background-color: #d53300;
+  background-color: #bf3128;
 }
 
 .vportfolio__tabs-list a.active {
-  background-color: #ff5722;
+  background-color: #dc6058;
 }
 
 .vskills__container {

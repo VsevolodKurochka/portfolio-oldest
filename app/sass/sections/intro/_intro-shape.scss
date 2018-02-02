@@ -11,20 +11,15 @@
 		}
 		&_main{
 			left: -100px;
-		}
-		@include resp-max(sm){
-			&_main{
+			opacity: 0.5;
+			@include resp-max(sm){
 				left: -15%;
 				@include size(300px);
 			}
-		}
-		@include resp-min(md){
-			&_main{
+			@include resp-min(md){
 				top: -100px;
 			}
-		}
-		@include resp-min(lg){
-			&_main{
+			@include resp-min(lg){
 				top: 0;
 			}
 		}
