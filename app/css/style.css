@@ -2021,13 +2021,13 @@ b,
 
 @media (min-width: 1025px) {
   .title-xlg {
-    font-size: 120px;
+    font-size: 110px;
   }
 }
 
 @media (min-width: 1200px) {
   .title-xlg {
-    font-size: 160px;
+    font-size: 130px;
   }
 }
 
