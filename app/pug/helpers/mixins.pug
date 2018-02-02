@@ -63,14 +63,14 @@ mixin btn-cross(title, type, href)
 		- defaultHref = '#';
 	
 	if type === "link"
-		+b.A.vbtn._cross(href=defaultHref)&attributes(attributes)
+		+b.A.btn._cross(href=defaultHref)&attributes(attributes)
 			span.fl
 			span.sfl
 			span.cross
 			i
 			p=title
 	else if type === 'button'
-		+b.BUTTON.vbtn._cross&attributes(attributes)
+		+b.BUTTON.btn._cross&attributes(attributes)
 			span.fl
 			span.sfl
 			span.cross

@@ -1,64 +1,64 @@
 /// Sizes for elements.
 $sizes: (
-	'vtitle-xs': (
+	'title-xs': (
 		xs:   18px
 	),
-	'vtitle-sm': (
+	'title-sm': (
 		sm:   20px,
 		md:   30px,
 		lg:   40px
 	),
-	'vtitle-md': (
+	'title-md': (
 		sm: 	24px,
 		md:   25px,
 		lg: 	26px
 	),
-	'vtitle-lg': (
+	'title-lg': (
 		xs:		50px,
 		sm:   60px,
 		md:   86px,
 		lg:   96px
 	),
-	'vtitle-xlg': (
+	'title-xlg': (
 		sm:   100px,
 		md:   120px,
 		lg:   160px
 	)
 );
 
-%vtitle-default{
+%title-default{
 	margin-top: 5px;
 	margin-bottom: 15px;
 }
-.vtitle{
+@include className('title'){
 	&-xs{
 		font-size: 18px;
-		@include fs('vtitle-xs');
-		@extend %vtitle-default;
+		@include fs('title-xs');
+		@extend %title-default;
 	}
 	&-sm{
 		font-size: 20px;
-		@include fs('vtitle-sm');
-		@extend %vtitle-default;
+		@include fs('title-sm');
+		@extend %title-default;
 	}
 	&-md{
 		line-height: 1.4;
 		font-size: 20px;
-		@include fs('vtitle-md');
-		@extend %vtitle-default;
+		@include fs('title-md');
+		@extend %title-default;
 	}
 	&-lg{
 		line-height: 1.1;
 		font-size: 45px;
-		@include fs('vtitle-lg');
+		@include fs('title-lg');
 		@include font('secondary');
-		@extend %vtitle-default;
+		@extend %title-default;
 	}
 	&-xlg{
 		line-height: 1.1;
 		font-size: 50px;
-		@include fs('vtitle-xlg');
-		@extend %vtitle-default;
+		@include fs('title-xlg');
+		@extend %title-default;
 	}
 	&-group{
 		margin-bottom: 30px;
