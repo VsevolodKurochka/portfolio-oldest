@@ -1,11 +1,10 @@
-$letters-bg-size: ("letters-bg-size": (xs: 90px, sm: 110px, md: 150px, lg: 220px))
+$letters-bg-size: ('default': 70px, 'xs': 90px, 'sm': 110px, 'md': 150px, 'lg': 220px)
 
 +b("letters-bg")
   position: absolute
   color: $color-black
   opacity: 0.04
   line-height: 1
-  font-size: 70px
   font-weight: bold
   text-transform: uppercase
   z-index: -1
@@ -16,4 +15,4 @@ $letters-bg-size: ("letters-bg-size": (xs: 90px, sm: 110px, md: 150px, lg: 220px
   &[data-emergence="visible"]
     filter: none
     transform: none
-  +fs("letters-bg-size", $letters-bg-size)
+  +fs-simple($letters-bg-size)

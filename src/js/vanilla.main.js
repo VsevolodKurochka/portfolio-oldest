@@ -3,7 +3,7 @@
 		console.log(content);
 	}
 
-	var hasClass = (element, cls) => (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+	const hasClass = (element, cls) => (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
 
 	function addClass(element,cls){
 		if( !hasClass(element, cls) ){
@@ -149,12 +149,24 @@
 				this.addition.addEventListener( 'click', (e) => this.additionClick(e, this) );
 			}
 
-			this.linksScroll();
-			
-			
-			// this.buttons.forEach( (button) => {
-			// 	button.addEventListener('click', (e) => this._showButtonClick(e, this));
-			// });
+			//this.linksScroll();
+
+			if(exists(this.navigation)) {
+				this.navigationScroll();
+			}
+
+		}
+
+		checkScrollY() {
+			window.scrollY > 0 ? addClass(this.navigation, 'nav_scrolled') : removeClass(this.navigation, 'nav_scrolled');
+		}
+
+		navigationScroll(){
+
+			this.checkScrollY();
+
+			window.addEventListener("scroll", ()	=> this.checkScrollY() );
+
 		}
 
 		hamburgerClick(el) {

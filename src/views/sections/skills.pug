@@ -27,11 +27,13 @@
 		+e.inner
 			+e.inner-shape._brand-1
 	+e.container.container
-		.row
-			.col-12.col-sm-6
-				+b.title-group
-					+e.H3.title.title-lg Here you can see my skills
-			.col-12.col-sm-6
+		+e.row.row
+			.col-12.col-sm-7
+				+b.group
+					+e.H3.title
+						| Here you can see 
+						+e.SPAN.title-element my skills
+			.col-12.col-sm-5
 				+e.UL.items
 					each skill in skills
 						+e.LI.item

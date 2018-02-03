@@ -1,7 +1,9 @@
-+b($themeNav)
++b('nav')
+	
+	+transition
+
 	+e("row")
 		justify-content: space-between
-
 
 	+max(md)
 		&_style
@@ -27,3 +29,9 @@
 
 	+min(md)
 		padding: 25px 0
+		&_scrolled
+			padding-top: 15px
+			padding-bottom: 15px
+			background-color: #fff
+			box-shadow: 0 2px 5px rgba(0, 0, 0, .26)
+			color: $color-black
