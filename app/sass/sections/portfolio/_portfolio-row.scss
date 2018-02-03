@@ -1,4 +1,4 @@
-@include className('portfolio'){
+@include b('portfolio'){
 	&__row{
 		margin-top: 45px;
 		@include min(sm){

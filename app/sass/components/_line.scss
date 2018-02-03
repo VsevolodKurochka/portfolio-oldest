@@ -1,7 +1,7 @@
 .site-content{
 	position: relative;
 }
-@include className('line'){
+@include b('line'){
 	position: absolute;
 	left: 0;
 	top: 0;

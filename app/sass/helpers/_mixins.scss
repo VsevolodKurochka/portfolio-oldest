@@ -86,7 +86,7 @@
 	}
 }
 
-@mixin className($class, $prefix: $themePrefix){
+@mixin b($class, $prefix: $themePrefix){
 	.#{$prefix}#{$class}{
 		@content;
 	}

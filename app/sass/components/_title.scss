@@ -30,7 +30,7 @@ $sizes: (
 	margin-top: 5px;
 	margin-bottom: 15px;
 }
-@include className('title'){
+@include b('title'){
 	&-xs{
 		font-size: 18px;
 		@include fs('title-xs');

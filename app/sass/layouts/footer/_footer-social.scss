@@ -1,4 +1,4 @@
-@include className('site-footer'){
+@include b('site-footer'){
 	&__social{
 		@include min(sm){
 			text-align: right;

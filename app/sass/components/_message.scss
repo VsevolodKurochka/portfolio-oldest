@@ -1,4 +1,4 @@
-@include className('message'){
+@include b('message'){
 	padding: 30px;
 	background-color: #fff;
 	@include min(sm){
