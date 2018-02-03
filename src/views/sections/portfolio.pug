@@ -1,34 +1,25 @@
 -
 	const portfolio = [
 		{
-			"info": {
-				"ID": "wordpress",
-				"title": "Wordpress",
-				"status": "active"
-			},
-			"items": [
-				{
-					"image": "img/item1.jpg",
-					"title": "Item Wordpress 1",
-					"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
-					"tag": "WP",
-					"link": "#"
-				},
-				{
-					"image": "img/item2.jpg",
-					"title": "Item Wordpress 2",
-					"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
-					"tag": "WP",
-					"link": "#"
-				},
-				{
-					"image": "img/item3.jpg",
-					"title": "Item Wordpress 3",
-					"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
-					"tag": "WP",
-					"link": "#"
-				}
-			]
+			"image": "img/item1.jpg",
+			"title": "Item Wordpress 1",
+			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
+			"category": "Front End",
+			"link": "#"
+		},
+		{
+			"image": "img/item2.jpg",
+			"title": "Item Wordpress 2",
+			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
+			"category": "Front End",
+			"link": "#"
+		},
+		{
+			"image": "img/item3.jpg",
+			"title": "Item Wordpress 3",
+			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
+			"category": "Front End",
+			"link": "#"
 		}
 		// {
 		// 	"info": {
@@ -91,12 +82,13 @@
 		// 	]
 		// }
 	];
+
 +b.SECTION.portfolio__.section-anchor#section-portfolio
-	+e.shape._right.shape__._brand-1._transparent(data-emergence="hidden")
-		+e.inner
-			+e.inner-shape._brand-1
+	//- +e.shape._right.shape__._brand-1._transparent(data-emergence="hidden")
+	//- 	+e.inner
+	//- 		+e.inner-shape._brand-1
 	+e.container.container
-		.row
+		+e.title-row.row
 			.col-12.col-sm-8.col-md-6
 				+b.group
 					+e.H3.title
@@ -106,14 +98,9 @@
 						| For 
 						+b.SPAN.highlight._brand-1 4 years of work 
 						| , I have collected many projects that I can share with you. For each project, I made considerable efforts to ensure that everyone was happy!
-		+e.row.row.tabs__#portfolio-tabs
-			+e.content
-				for group in portfolio
-					+e.tab(class=group.info.status id='tab-' + group.info.ID)
-						+e.tab-content
-							.row
-								for groupItem in group.items
-									+case(groupItem.image, groupItem.title, groupItem.content, groupItem.tag, groupItem.link)
-						+e.tab-footer
-							+btn-cross('View all Projects', '#')
+		.row
+			for item in portfolio
+				+case(item.image, item.title, item.content, item.category, item.link)
+		.text-center
+			+btn-cross('View all Projects', '#')
 		//+e.P.letters-bg.letters-bg(data-emergence="hidden") Perfection

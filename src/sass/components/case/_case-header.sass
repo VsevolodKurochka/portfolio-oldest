@@ -1,0 +1,13 @@
++b('case')
+	+e('header')
+		height: 200px
+		overflow: hidden
+		&-image
+			+size(100%)
+			object-fit: cover
+			+transition
+	&:hover
+		+b('case')
+			+e('header')
+				+ee('image')
+					transform: scale(1.1)

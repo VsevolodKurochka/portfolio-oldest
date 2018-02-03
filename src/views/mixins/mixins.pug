@@ -48,24 +48,22 @@ mixin hamburger(type)
 				span
 				span
 
-mixin case(image, title, content, tag, link)
+mixin case(image, title, content, category, link)
 	+b.case.col-12.col-sm-6.col-md-4
 		+e.inner
 			+e.header
-				+e.header-image(src=image)
+				+e.A.header-link(src=link)
+					+e.IMG.header-image(src=image)
 			+e.content
 				+e.body
-					+e.A.title=title
+					+e.P.subtitle=category
+					+e.A.title(href=link)=title
 					+e.body-content
 						p=content
 				+e.footer
-					+e.footer-part
-						+e.A.subtitle(href="#")=tag
-					+e.footer-part
-						+e.A.link.btn._plus(href=link)
-							i
-							p Visit
-
+					+e.A.link.btn._plus(href=link)
+						i
+						p more
 mixin form()
 	+b.FORM.vform._block
 		+e.content
