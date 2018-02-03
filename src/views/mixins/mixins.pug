@@ -65,7 +65,7 @@ mixin case(image, title, content, category, link)
 						i
 						p more
 mixin form()
-	+b.FORM.vform._block
+	+b.FORM.form._block
 		+e.content
 			+e.row._line
 				+e.INPUT.control(name="vname" type="text" placeholder="Name")
@@ -77,7 +77,7 @@ mixin form()
 				+e.INPUT.control(name="vphone" type="phone" placeholder="Phone")
 				+e.SPAN.line
 			+e.row
-				+btn-cross('Send Message', 'button')(type="submit")
+				+btn-cross('Send', 'button')(class="_cross-brand-1 _size-lg" type="submit")
 
 mixin social(size)
 	+b.UL.social(class=size)
