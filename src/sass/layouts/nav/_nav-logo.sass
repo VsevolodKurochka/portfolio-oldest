@@ -1,5 +1,7 @@
 +b('nav')
-	&__logo
+	$self: &
+
+	+e('logo')
 		font-size: 0
 
 		&-content
@@ -8,5 +10,10 @@
 				line-height: 1
 				font-size: 20px
 				font-weight: 900
+				+transition
+					
 				+min(md)
 					font-size: 30px
+	+min(md)
+		&_scrolled &__logo-content-text
+			color: $color-black
