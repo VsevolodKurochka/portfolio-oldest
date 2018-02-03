@@ -103,20 +103,15 @@
 						span.color-brand-1 Case 
 						| Projects
 					+e.content
-						+b.P.title-md
-							| For
-							+b.SPAN.highlight._brand-1 4 years of work 
-							|, I have collected many projects that I can share with you. For each project, I made considerable efforts to ensure that everyone was happy!
+						| For 
+						+b.SPAN.highlight._brand-1 4 years of work 
+						| , I have collected many projects that I can share with you. For each project, I made considerable efforts to ensure that everyone was happy!
 		+e.row.row.tabs__#portfolio-tabs
-			+e.UL.list.portfolio__tabs-list
-				for group in portfolio
-					li
-						a(class=group.info.status href="#tab-" + group.info.ID)=group.info.title
 			+e.content
 				for group in portfolio
 					+e.tab(class=group.info.status id='tab-' + group.info.ID)
 						+e.tab-content
-							.vrow
+							.row
 								for groupItem in group.items
 									+case(groupItem.image, groupItem.title, groupItem.content, groupItem.tag, groupItem.link)
 						+e.tab-footer
