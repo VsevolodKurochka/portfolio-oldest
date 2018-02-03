@@ -1,17 +1,12 @@
 @include b('skills'){
-	&__item{
-		position: relative;
-		width: 33.3333%;
-		padding: 45px 15px;
-		margin: -1px;
-		text-align: center;
-		font-weight: bold;
-		transition: all ease 1s;
-		$skill-item-color: darken($color-brand-2, 10%);
-		$skill-item-border: 1px solid $skill-item-color;
-		border: $skill-item-border;
-		&:hover{
-			background-color: $skill-item-color;
+	@include e('item'){
+		display: block;
+		list-style: none;
+
+		&:not(:last-child){
+			margin-bottom: 10px;
 		}
+
+
 	}
 }
