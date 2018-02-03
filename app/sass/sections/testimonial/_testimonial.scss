@@ -1,9 +1,0 @@
-@include b('testimonial'){
-	position: relative;
-	padding-top: 45px;
-	padding-bottom: 45px;
-	@include min(sm){
-		padding-top: 75px;
-		padding-bottom: 75px;
-	}
-}

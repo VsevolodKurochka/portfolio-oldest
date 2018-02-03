@@ -1,8 +1,0 @@
-@include b('intro'){
-	&__content{
-
-		@include min(md){
-			font-size: 21px;
-		}
-	}
-}

@@ -1,0 +1,41 @@
+-
+	var skills = [
+		{
+			name: 'Wordpress',
+			percentage: 100
+		},
+		{
+			name: 'CSS/CSS3',
+			percentage: 100
+		},
+		{
+			name: 'HTML/HTML5',
+			percentage: 100
+		},
+		{
+			name: 'JS/JQUERY',
+			percentage: 100
+		},
+		{
+			name: 'PHP',
+			percentage: 100
+		}
+	];
+
++b.SECTION.skills.section-anchor#section-skills
+	+e.shape._right.shape__._brand-1._transparent(data-emergence="hidden")
+		+e.inner
+			+e.inner-shape._brand-1
+	+e.container.container
+		.row
+			.col-12.col-sm-6
+				+b.title-group
+					+e.H3.title.title-lg Here you can see my skills
+			.col-12.col-sm-6
+				+e.UL.items
+					each skill in skills
+						+e.LI.item
+							+e.P.item-header=skill.name
+							+e.item-line
+								+e.SPAN.item-line-slider(style="width:" + skill.percentage + '%')
+		//+e.P.letters-bg.letters-bg(data-emergence="hidden") So much

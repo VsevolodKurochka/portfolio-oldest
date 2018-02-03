@@ -1,9 +1,0 @@
-@include b('portfolio'){
-	&__letters-bg{
-		left: 5px;
-		top: 5px;
-		@include min(xs){
-			left: -15%;
-		}
-	}
-}

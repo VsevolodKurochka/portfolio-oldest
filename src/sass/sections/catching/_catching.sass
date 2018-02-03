@@ -1,0 +1,25 @@
++b('catching')
+	position: relative
+	z-index: 1
+	&:before
+		+pseudo()
+		left: -50px
+		top: -50px
+		width: 120%
+		height: 100%
+		background-color: $color-brand-2
+		transform: rotate(5deg)
+		z-index: -1
+	
+	+min(sm)
+		&:before
+			left: -100px
+			top: -100px
+		
+	
+	padding-top: 45px
+	padding-bottom: 60px
+	+min(md)
+		padding-top: 90px
+		padding-bottom: 220px
+	

@@ -1,7 +1,0 @@
-@include b('intro'){
-	&__row{
-		@include min(sm){
-			align-items: center;
-		}
-	}
-}

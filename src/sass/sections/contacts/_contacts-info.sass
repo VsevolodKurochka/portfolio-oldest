@@ -1,0 +1,27 @@
++b('contacts')
+	&__info
+		margin-top: 30px
+		margin-bottom: 30px
+		list-style: none
+		&-element
+			&:not(:last-child)
+				margin-bottom: 15px
+			
+			&-link
+				display: block
+				text-decoration: none
+				color: inherit
+				font-weight: bold
+				+transition()
+				&-icon
+					min-width: 20px
+				
+				&:hover
+					color: $color-brand-1
+				
+				&-icon + &-text
+					margin-left: 15px
+				
+			
+		
+	

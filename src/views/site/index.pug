@@ -1,0 +1,16 @@
+extends /extends/layout
+block variables
+	- var title = "Vsevolod Kurochka - portfolio";
+	- var description = "Vsevolod Kurochka - portfolio - Description";
+	- var url = "";
+	- var image = "img/logo.png";
+
+block nav
+	include /components/nav
+block content
+	include /sections/intro
+	include /sections/skills
+	include /sections/portfolio
+	include /sections/catching
+	include /sections/testimonial
+	include /sections/contacts

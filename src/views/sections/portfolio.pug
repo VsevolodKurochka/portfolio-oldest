@@ -1,0 +1,120 @@
+-
+	const portfolio = [
+		{
+			"info": {
+				"ID": "wordpress",
+				"title": "Wordpress",
+				"status": "active"
+			},
+			"items": [
+				{
+					"image": "img/item1.jpg",
+					"title": "Item Wordpress 1",
+					"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
+					"tag": "WP",
+					"link": "#"
+				},
+				{
+					"image": "img/item2.jpg",
+					"title": "Item Wordpress 2",
+					"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
+					"tag": "WP",
+					"link": "#"
+				},
+				{
+					"image": "img/item3.jpg",
+					"title": "Item Wordpress 3",
+					"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
+					"tag": "WP",
+					"link": "#"
+				}
+			]
+		},
+		{
+			"info": {
+				"ID": "LandingPage",
+				"title": "Landing Page",
+				"status": ""
+			},
+			"items": [
+				{
+					"image": "img/item2.jpg",
+					"title": "Item LandingPage 1",
+					"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
+					"tag": "WP",
+					"link": "#"
+				},
+				{
+					"image": "img/item3.jpg",
+					"title": "Item LandingPage 2",
+					"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
+					"tag": "WP",
+					"link": "#"
+				},
+				{
+					"image": "img/item3.jpg",
+					"title": "Item LandingPage 3",
+					"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
+					"tag": "WP",
+					"link": "#"
+				}
+			]
+		},
+		{
+			"info": {
+				"ID": "WooCommerce",
+				"title": "WooCommerce",
+				"status": ""
+			},
+			"items": [
+				{
+					"image": "img/item3.jpg",
+					"title": "Item WooCommerce 1",
+					"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
+					"tag": "WP",
+					"link": "#"
+				},
+				{
+					"image": "img/item1.jpg",
+					"title": "Item WooCommerce 2",
+					"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
+					"tag": "WP",
+					"link": "#"
+				},
+				{
+					"image": "img/item2.jpg",
+					"title": "Item WooCommerce 3",
+					"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
+					"tag": "WP",
+					"link": "#"
+				}
+			]
+		}
+	];
++b.SECTION.portfolio__.section-anchor#section-portfolio
+	+e.shape._right.shape__._brand-1._transparent(data-emergence="hidden")
+		+e.inner
+			+e.inner-shape._brand-1
+	+e.container.container
+		+b.title-group._inline
+			+e.H3.title.title-lg My<br>Works
+			+e.content
+				+b.P.title-md
+					| For
+					+b.SPAN.highlight._brand-1 3 years of work
+					| , I have collected many projects that I can share with you. For each project, I made considerable efforts to ensure that everyone was happy!
+		+e.row.row.tabs__#portfolio-tabs
+			+e.UL.list.portfolio__tabs-list
+				for group in portfolio
+					li
+						a(class=group.info.status href="#tab-" + group.info.ID)=group.info.title
+			+e.content
+				for group in portfolio
+					+e.tab(class=group.info.status id='tab-' + group.info.ID)
+						+e.tab-content
+							.vrow
+								for groupItem in group.items
+									+case(groupItem.image, groupItem.title, groupItem.content, groupItem.tag, groupItem.link)
+						+e.tab-footer
+							+btn-cross('View all Projects', '#')
+		+e.P.letters-bg.letters-bg(data-emergence="hidden") Perfection

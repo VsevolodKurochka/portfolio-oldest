@@ -1,0 +1,27 @@
++b('testimonial')
+	&__item
+		&-body
+			position: relative
+			
+			&:before
+				content: ""
+				position: absolute
+				left: 50%
+				top: 50%
+				transform: translate(-50%,-50%)
+				width: 100px
+				height: 100px
+				opacity: 0.05
+				+bg('../img/quote.svg')
+			
+			&-content
+				padding-left: 15px
+				padding-right: 15px
+				+min(lg)
+					width: 80%
+					margin-left: auto
+					margin-right: auto
+				
+			
+		
+	

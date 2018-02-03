@@ -16,8 +16,8 @@
   "space-before-colon": 0,
   "space-before-combinator": 1,
   "space-before-opening-brace": 1,
-  "strip-spaces": true,
-  "unitless-zero": true,
+  "strip-spaces": false,
+  "unitless-zero": false,
   "vendor-prefix-align": true,
   "sort-order": [
     [

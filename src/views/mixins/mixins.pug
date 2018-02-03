@@ -1,0 +1,120 @@
+mixin css(src)
+	link(href=src rel="stylesheet")
+mixin js(src)
+	script(src=src)
+
+mixin add-meta(title, description, url, image)
+	if title
+		title=title
+		meta(property="og:title" content=title)
+	if description
+		meta(itemprop="description" content=description)
+		meta(property="og:description" content=description)
+	if url
+		meta(property="og:url" content=url)
+		meta(property="og:type" content="website")
+	if image
+		meta(property="og:image" content=image)
+		meta(property="og:image:type" content="image/jpeg")
+		meta(property="og:image:width" content="1000")
+		meta(property="og:image:height" content="330")
+
+mixin menu-item(isLink,href, name)
+
+	- var menuItemClass = '';
+	if wordpress
+		- menuItemClass = 'menu-item';
+	else
+		- menuItemClass = themePrefix + themeNav + '__menu-item'; 
+
+	li(class=menuItemClass)
+		if isLink === 'true'
+			a( href=href )=name
+		else
+			block
+
+mixin hamburger(type)
+	if type == '1'
+		+b.hamburger._effect-1(type="button" id="js-nav-hamburger")
+			+e.SPAN.lines
+				span Line1
+				span Line2
+				span Line3
+	else if type == '2'
+		+b.hamburger._effect-2(type="button" id="js-nav-hamburger")
+			+e.SPAN.lines
+				span
+				span
+				span
+				span
+
+mixin case(image, title, content, tag, link)
+	+b.case.col-12.col-sm-6.col-md-4
+		+e.inner
+			+e.header
+				+e.header-image(src=image)
+			+e.content
+				+e.body
+					+e.A.title=title
+					+e.body-content
+						p=content
+				+e.footer
+					+e.footer-part
+						+e.A.subtitle(href="#")=tag
+					+e.footer-part
+						+e.A.link.btn._plus(href=link)
+							i
+							p Visit
+
+mixin form()
+	+b.FORM.vform._block
+		+e.content
+			+e.row._line
+				+e.INPUT.control(name="vname" type="text" placeholder="Name")
+				+e.SPAN.line
+			+e.row._line
+				+e.INPUT.control(name="vemail" type="email" placeholder="E-mail")
+				+e.SPAN.line
+			+e.row._line
+				+e.INPUT.control(name="vphone" type="phone" placeholder="Phone")
+				+e.SPAN.line
+			+e.row
+				+btn-cross('Send Message', 'button')(type="submit")
+
+mixin social(size)
+	+b.UL.social(class=size)
+		+e.LI.item
+			+e.A.item-link(href="tel: +38 (063) 505 62 63")
+				+e.I.item-link-icon.fa.fa-mobile(aria-hidden="true")
+		+e.LI.item
+			+e.A.item-link(href="skype: mozilla20103")
+				+e.I.item-link-icon.fa.fa-skype(aria-hidden="true")
+		+e.LI.item
+			+e.A.item-link(href="https://www.facebook.com/vsevolod.kurochka.1")
+				+e.I.item-link-icon.fa.fa-facebook(aria-hidden="true")
+		+e.LI.item
+			+e.A.item-link(href="https://github.com/VsevolodKurochka")
+				+e.I.item-link-icon.fa.fa-github(aria-hidden="true")
+
+// class="_size-lg"
+mixin btn-cross(title, type, href)
+	- var defaultHref = '';
+	if href
+		- defaultHref = href;
+	else
+		- defaultHref = '#';
+	
+	if type === "link"
+		+b.A.btn._cross(href=defaultHref)&attributes(attributes)
+			span.fl
+			span.sfl
+			span.cross
+			i
+			p=title
+	else if type === 'button'
+		+b.BUTTON.btn._cross&attributes(attributes)
+			span.fl
+			span.sfl
+			span.cross
+			i
+			p=title

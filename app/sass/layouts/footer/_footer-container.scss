@@ -1,9 +1,0 @@
-@include b('site-footer'){
-	&__container{
-		padding-top: 20px;
-		&:not(:last-child){
-			padding-bottom: 20px;
-			border-bottom: 1px solid $color-brand-2;
-		}
-	}
-}

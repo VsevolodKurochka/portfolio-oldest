@@ -1,0 +1,37 @@
++b('social')
+	list-style: none
+	font-size: 0
+	&__item
+		display: inline-block
+		vertical-align: middle
+		&-link
+			display: inline-block
+			+size(22px)
+			font-size: 12px
+			line-height: 22px
+			border-radius: 100%
+			border: 1px solid #d8d8d8
+			text-align: center
+			color: inherit
+			+transition()
+			&:hover
+				color: $color-brand-1
+				border-color: $color-brand-1
+			
+			+min(sm)
+				+size(30px)
+				line-height: 30px
+				font-size: 16px
+			
+		
+		&:not(:last-child)
+			margin-right: 10px
+		
+	&_big &__item
+		&-link
+			+size(40px)
+			line-height: 40px
+			font-size: 18px
+		
+		&:not(:last-child)
+			margin-right: 15px
