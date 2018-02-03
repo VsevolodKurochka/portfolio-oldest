@@ -14,7 +14,7 @@
 				vertical-align: middle;
 			}
 		}
-		@include resp-max(md){
+		@include max(md){
 			&-link{
 				&-text{
 					display: none;

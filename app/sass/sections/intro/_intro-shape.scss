@@ -12,7 +12,7 @@
 		&_main{
 			left: -100px;
 			opacity: 0.5;
-			@include resp-max(sm){
+			@include max(sm){
 				left: -15%;
 				@include size(300px);
 			}

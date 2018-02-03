@@ -13,7 +13,7 @@
 				}
 			}
 		}
-		@include resp-max(md){
+		@include max(md){
 			.#{$themeNav}_style &{
 				&-content{
 					&-text{

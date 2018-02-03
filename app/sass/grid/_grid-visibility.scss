@@ -24,16 +24,16 @@
   @include visibility(lg);
 }
 @include min(md){
-  @include resp-max(lg){
+  @include max(lg){
     @include visibility(md);
   }
 }
 @include min(sm){
-  @include resp-max(md){
+  @include max(md){
     @include visibility(sm);
   }
 }
-@include resp-max(sm){
+@include max(sm){
   @include visibility(xs);
 }
 /* -----------------------------------------------------------------------------

@@ -9,7 +9,7 @@
 			 @error $error-variable + " #{$breakpoint}";
 		}
 	}
-	@mixin resp-max($breakpoint, $breakpoints: $breakpoints){
+	@mixin max($breakpoint, $breakpoints: $breakpoints){
 		$value: map-get($breakpoints,$breakpoint);
 		@if $value != null { 
 			@media (max-width: $value - 1px) {

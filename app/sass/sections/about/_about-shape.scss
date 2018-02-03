@@ -1,6 +1,6 @@
 @include className('about'){
 	&__shape{
-		@include resp-max(xs){
+		@include max(xs){
 			position: relative;
 			margin-bottom: 30px;
 		}

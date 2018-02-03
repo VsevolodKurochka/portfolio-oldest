@@ -7,7 +7,7 @@
 			@include rowOffset();
 		}
 	}
-	@include resp-max(sm){
+	@include max(sm){
 		&__row{
 			#{$self}_line &{
 				@include rowOffset();

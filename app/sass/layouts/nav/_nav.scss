@@ -9,7 +9,7 @@
 				@include transition($tr-dur: 0.3s);
 			}
 		}
-		@include resp-max(md){
+		@include max(md){
 			@at-root{
 				%vnav-resp{
 					left: 0;

@@ -1,7 +1,7 @@
 .#{$themeNav}{
 	&__menu{
 		-webkit-overflow-scrolling:touch;
-		@include resp-max(md){
+		@include max(md){
 			.#{$themeNav}_style &{
 				transform: translateZ(0) translateX(-120%);
 				position: fixed;

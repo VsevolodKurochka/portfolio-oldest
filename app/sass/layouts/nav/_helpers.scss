@@ -3,7 +3,7 @@
 	width: 100%;
 	left: 0;
 	z-index: z('fixed');
-	@include resp-max(md){
+	@include max(md){
 		& + .site{
 			margin-top: 56px;
 		}
