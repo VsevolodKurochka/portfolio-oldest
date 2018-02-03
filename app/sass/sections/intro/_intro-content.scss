@@ -1,13 +1,8 @@
 @include b('intro'){
 	&__content{
-		position: relative;
-
-		@include min(sm){
-			top: 45px;
-		}
 
 		@include min(md){
-			font-size: 19px;
+			font-size: 21px;
 		}
 	}
 }

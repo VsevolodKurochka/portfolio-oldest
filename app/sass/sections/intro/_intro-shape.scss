@@ -7,13 +7,11 @@
 		}
 		&_right{
 			right: 0;
-			bottom: 60%;
+			bottom: 80%;
 		}
 		&_main{
-			left: -100px;
 			opacity: 0.5;
 			@include max(sm){
-				left: -15%;
 				@include size(300px);
 			}
 			@include min(md){
@@ -21,6 +19,7 @@
 			}
 			@include min(lg){
 				top: 0;
+				left: 40%;
 			}
 		}
 	}

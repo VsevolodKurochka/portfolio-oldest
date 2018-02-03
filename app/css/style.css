@@ -2709,19 +2709,18 @@ b,
   text-align: right;
 }
 
-.intro__content {
-  position: relative;
-}
-
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   .intro__content {
-    top: 45px;
+    font-size: 21px;
   }
 }
 
-@media (min-width: 1025px) {
-  .intro__content {
-    font-size: 19px;
+@media (min-width: 768px) {
+  .intro__row {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 }
 
@@ -2736,17 +2735,15 @@ b,
 
 .intro__shape_right {
   right: 0;
-  bottom: 60%;
+  bottom: 80%;
 }
 
 .intro__shape_main {
-  left: -100px;
   opacity: .5;
 }
 
 @media (max-width: 767px) {
   .intro__shape_main {
-    left: -15%;
     width: 300px;
     height: 300px;
   }
@@ -2761,6 +2758,7 @@ b,
 @media (min-width: 1200px) {
   .intro__shape_main {
     top: 0;
+    left: 40%;
   }
 }
 
