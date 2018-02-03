@@ -10,20 +10,20 @@
 			+e.inner
 				+e.inner-shape._brand-1
 		+e.row.row
-			.col-12.col-sm-6.col-lg-5
-				+e.H1.title
+			+e.column.col-12.col-sm-6.col-lg-5
+				+e.title(data-text="Vsevolod Kurochka") Vsevolod Kurochka
+				//+e.H1.title
 					| Vsevolod
 					br
-					//span.font-weight-extra-light Kurochka
+					span.font-weight-extra-light Kurochka
 					| Kurochka
 				+e.H2.subtitle
 					+e.SPAN.subtitle-element Web developer
 					+e.SPAN.subtitle-element Freelancer
 					+e.SPAN.subtitle-element 4 years experience
-				+e.button
-					+btn-cross('My resume', 'button')(class="_cross-white _size-lg")
-			.col-12.col-sm-4.col-lg-3
 				+e.P.content
 					| Looking for a web developer? I am a freelancer from Cherkassy, Ukraine. With the help of 
 					+b.SPAN.highlight._brand-1 magic 
 					| , I will create a modern site for your business.
+				+e.button
+					+btn-cross('My resume', 'button')(class="_cross-white _size-lg")

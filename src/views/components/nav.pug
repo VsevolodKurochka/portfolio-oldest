@@ -7,10 +7,6 @@
 					+e.logo-content
 						+e.P.logo-content-text Kurochka
 				+e.NAV.menu#js-navigation-menu
-					+e.UL.menu-list
-						for item in navigation
-							+e.LI.menu-item
-								+e.A.menu-item-link(data-scroll href=item.link)=item.name
-					+e.UL.menu-list
-						li
-							+btn-cross('Contact me', 'button')(class="_cross-white")
+					for item in navigation
+						+e.LI.menu-item
+							+e.A.menu-item-link(data-scroll href=item.link)=item.name
