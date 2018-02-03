@@ -5,7 +5,22 @@
 
 		&:not(:last-child)
 			margin-bottom: 10px
-		
 
+		+ee('header')
+			+font('secondary')
+			text-transform: uppercase
+			margin-bottom: 5px
+			font-weight: bold
 
-	
+			+min(md)
+				font-size: 23px
+
+		+ee('line')
+			+relative
+			+size(100%, 25px)
+			background-color: lighten($color-black, 90%)
+
+			+ee('slider')
+				+absolute(0,null,null,0)
+				height: 100%
+				background-color: lighten($color-brand-1, 0%)
