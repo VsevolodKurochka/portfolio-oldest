@@ -88,7 +88,7 @@
 	//- 	+e.inner
 	//- 		+e.inner-shape._brand-1
 	+e.container.container
-		+e.title-row.row
+		+e.header.row
 			.col-12.col-sm-8.col-md-6
 				+b.group
 					+e.H3.title
@@ -98,9 +98,9 @@
 						| For 
 						+b.SPAN.highlight._brand-1 4 years of work 
 						| , I have collected many projects that I can share with you. For each project, I made considerable efforts to ensure that everyone was happy!
-		.row
+		+e.content.row
 			for item in portfolio
 				+case(item.image, item.title, item.content, item.category, item.link)
-		.text-center
-			+btn-cross('View all Projects', 'link', '#')(class="_cross-brand-1 _size-lg")
+		+e.footer
+			+btn-cross('See full portfolio', 'link', '#')(class="_cross-brand-1 _size-lg")
 		//+e.P.letters-bg.letters-bg(data-emergence="hidden") Perfection
