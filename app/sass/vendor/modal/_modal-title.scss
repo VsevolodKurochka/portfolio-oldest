@@ -20,7 +20,7 @@
 			background-color: $color-brand-1;
 		}
 	}
-	@include resp-min(xs){
+	@include min(xs){
 		font-size: 18px;
 		letter-spacing: 2.5px;
 	}

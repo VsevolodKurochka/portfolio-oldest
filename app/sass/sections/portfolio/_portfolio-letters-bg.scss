@@ -2,7 +2,7 @@
 	&__letters-bg{
 		left: 5px;
 		top: 5px;
-		@include resp-min(xs){
+		@include min(xs){
 			left: -15%;
 		}
 	}

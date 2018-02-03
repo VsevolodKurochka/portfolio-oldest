@@ -1,7 +1,7 @@
 @include className('portfolio'){
 	&__row{
 		margin-top: 45px;
-		@include resp-min(sm){
+		@include min(sm){
 			flex-direction: row-reverse;
 		}
 	}

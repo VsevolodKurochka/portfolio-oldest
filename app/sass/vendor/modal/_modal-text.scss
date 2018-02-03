@@ -15,7 +15,7 @@
 				margin-bottom: 0;
 			}
 		}
-		@include resp-min(sm){
+		@include min(sm){
 			max-height: 350px;
 			&::-webkit-scrollbar{
 				width: 7.5px;

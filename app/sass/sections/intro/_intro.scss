@@ -13,12 +13,12 @@
 		background-color: $color-general;
 		transform: rotate(-5deg);
 		z-index: -1;
-		@include resp-min(sm){
+		@include min(sm){
 			left: -100px;
 			top: -100px;
 		}
 	}
-	@include resp-min(md){
+	@include min(md){
 		padding-top: 200px;
 		padding-bottom: 150px;
 	}

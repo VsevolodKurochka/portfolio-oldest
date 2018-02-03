@@ -16,7 +16,7 @@
 			}
 		}
 	}
-	@include resp-min(md){
+	@include min(md){
 		display: inline-block;
 		vertical-align: middle;
 		&:not(:last-child){

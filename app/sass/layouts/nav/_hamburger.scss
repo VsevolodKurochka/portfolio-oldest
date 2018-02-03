@@ -145,7 +145,7 @@ $hamburger-line-height: 4px;
 			}
 		}
 	}
-	@include resp-min(md){
+	@include min(md){
 		display: none;
 	}
 }

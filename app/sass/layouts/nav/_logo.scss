@@ -8,7 +8,7 @@
 				line-height: 1;
 				font-size: 20px;
 				font-weight: 900;
-				@include resp-min(md){
+				@include min(md){
 					font-size: 30px;
 				}
 			}

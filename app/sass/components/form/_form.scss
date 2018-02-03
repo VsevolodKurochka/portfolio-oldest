@@ -14,7 +14,7 @@
 			}
 		}
 	}
-	@include resp-min(sm){
+	@include min(sm){
 		&__content{
 			#{$self}_line &{
 				display: flex;

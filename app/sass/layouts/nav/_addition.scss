@@ -21,7 +21,7 @@
 				}
 			}
 		}
-		@include resp-min(md){
+		@include min(md){
 			order: 3;
 			color: $color-black;
 			&-link{

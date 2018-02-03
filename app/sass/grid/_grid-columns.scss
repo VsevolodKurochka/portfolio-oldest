@@ -45,16 +45,16 @@
 }
 
 @include make-column();
-@include resp-min(xs){
+@include min(xs){
 	@include make-column(xs);
 }
-@include resp-min(sm){
+@include min(sm){
 	@include make-column(sm);
 }
-@include resp-min(md){
+@include min(md){
 	@include make-column(md);
 }
-@include resp-min(lg){
+@include min(lg){
 	@include make-column(lg);
 }
 @if getComp(flex) == true{

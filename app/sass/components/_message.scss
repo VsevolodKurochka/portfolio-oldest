@@ -1,7 +1,7 @@
 @include className('message'){
 	padding: 30px;
 	background-color: #fff;
-	@include resp-min(sm){
+	@include min(sm){
 		padding: 40px;
 	}
 	&_shadow{

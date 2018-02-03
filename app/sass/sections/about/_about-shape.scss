@@ -4,11 +4,11 @@
 			position: relative;
 			margin-bottom: 30px;
 		}
-		@include resp-min(xs){
+		@include min(xs){
 			right: 15px;
 			top: 15px;
 		}
-		@include resp-min(md){
+		@include min(md){
 			top: -200px;
 		}
 	}

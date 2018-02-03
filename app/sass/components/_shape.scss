@@ -37,13 +37,13 @@
 	&_transparent{
 		opacity: 0.1;
 	}
-	@include resp-min(sm){
+	@include min(sm){
 		@include size(300px);
 	}
-	@include resp-min(md){
+	@include min(md){
 		@include size(500px);
 	}
-	@include resp-min(lg){
+	@include min(lg){
 		@include size(600px);
 	}
 }

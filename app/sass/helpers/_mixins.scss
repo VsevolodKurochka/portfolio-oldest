@@ -1,5 +1,5 @@
 // Media Queries
-	@mixin resp-min($breakpoint, $breakpoints: $breakpoints){
+	@mixin min($breakpoint, $breakpoints: $breakpoints){
 		$value: map-get($breakpoints,$breakpoint);
 		@if $value != null  {
 			@media (min-width: $value ) {

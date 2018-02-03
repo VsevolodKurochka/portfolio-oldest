@@ -11,7 +11,7 @@
 		transform: rotate(5deg);
 		z-index: -1;
 	}
-	@include resp-min(sm){
+	@include min(sm){
 		&:before{
 			left: -100px;
 			top: -100px;

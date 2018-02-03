@@ -20,9 +20,9 @@ $sizes: (
 		lg:   96px
 	),
 	'title-xlg': (
-		sm:   100px,
-		md:   110px,
-		lg:   130px
+		sm:   50px,
+		md:   60px,
+		lg:   75px
 	)
 );
 
@@ -62,7 +62,7 @@ $sizes: (
 	}
 	&-group{
 		margin-bottom: 30px;
-		@include resp-min(sm){
+		@include min(sm){
 			margin-bottom: 45px;
 			&_inline{
 				display: flex;
@@ -73,13 +73,13 @@ $sizes: (
 			&-footer{
 				margin-top: 30px;
 			}
-			@include resp-min(sm){
+			@include min(sm){
 				padding-left: 30px;
 			}
-			@include resp-min(md){
+			@include min(md){
 				padding-left: 45px;
 			}
-			@include resp-min(lg){
+			@include min(lg){
 				padding-left: 75px;
 			}
 		}

@@ -21,7 +21,7 @@
 }
 @mixin rowOffset(){
 	margin-bottom: 30px;
-	@include resp-min(sm){
+	@include min(sm){
 		margin-bottom: 45px;
 	}
 	&:last-child{

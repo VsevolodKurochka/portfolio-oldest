@@ -12,7 +12,7 @@ $container-width: (
   min-height: 1px;
 	@include xOffset('padding', getComp(gutter));
   @each $c-resp, $container_value in $container-width{
-    @include resp-min($c-resp){
+    @include min($c-resp){
       width: $container_value;
     }
   }  

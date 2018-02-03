@@ -1,9 +1,19 @@
 @include className('intro'){
 	&__title{
 		@include font('secondary');
+		margin-bottom: 30px;
+		line-height: 1.1;
 		font-weight: 700;
 		letter-spacing: 10px;
 		text-transform: uppercase;
-		margin-bottom: 30px;
+		@include min(sm){
+			font-size: 50px;
+		}
+		@include min(md){
+			font-size: 60px;
+		}
+		@include min(lg){
+			font-size: 75px;
+		}
 	}
 }

@@ -20,15 +20,15 @@
     @extend %vvisible;
   }
 }
-@include resp-min(lg){
+@include min(lg){
   @include visibility(lg);
 }
-@include resp-min(md){
+@include min(md){
   @include resp-max(lg){
     @include visibility(md);
   }
 }
-@include resp-min(sm){
+@include min(sm){
   @include resp-max(md){
     @include visibility(sm);
   }

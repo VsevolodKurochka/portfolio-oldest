@@ -18,7 +18,7 @@
 				color: $color-brand-1;
 				border-color: $color-brand-1;
 			}
-			@include resp-min(sm){
+			@include min(sm){
 				@include size(30px);
 				line-height: 30px;
 				font-size: 16px;

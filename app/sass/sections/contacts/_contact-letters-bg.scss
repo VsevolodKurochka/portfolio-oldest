@@ -3,7 +3,7 @@
 		bottom: 0;
 		right: 0;
 		text-align: right;
-		@include resp-min(md){
+		@include min(md){
 			bottom: -100px;
 		}
 	}

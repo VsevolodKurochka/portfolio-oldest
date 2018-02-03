@@ -2,7 +2,7 @@
 	&__title{
 		&-group{
 			position: relative;
-			@include resp-min(lg){
+			@include min(lg){
 				left: -65px;
 			}
 		}

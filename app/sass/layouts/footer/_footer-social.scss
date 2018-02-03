@@ -1,6 +1,6 @@
 @include className('site-footer'){
 	&__social{
-		@include resp-min(sm){
+		@include min(sm){
 			text-align: right;
 		}
 	}

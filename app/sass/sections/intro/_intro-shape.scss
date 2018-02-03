@@ -16,10 +16,10 @@
 				left: -15%;
 				@include size(300px);
 			}
-			@include resp-min(md){
+			@include min(md){
 				top: -100px;
 			}
-			@include resp-min(lg){
+			@include min(lg){
 				top: 0;
 			}
 		}

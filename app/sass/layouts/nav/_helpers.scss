@@ -8,7 +8,7 @@
 			margin-top: 56px;
 		}
 	}
-	@include resp-min(md){
+	@include min(md){
 		&_md{
 			&-top{
 				top: 0;

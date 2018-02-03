@@ -2,7 +2,7 @@
 	&__container{
 		padding-top: 45px;
 		padding-bottom: 45px;
-		@include resp-min(md){
+		@include min(md){
 			padding-top: 100px;
 			padding-bottom: 300px;
 		}

@@ -22,7 +22,7 @@
 		&-list{
 			list-style: none;
 		}
-		@include resp-min(md){
+		@include min(md){
 			&-list{
 				display: inline-block;
 				vertical-align: middle;
