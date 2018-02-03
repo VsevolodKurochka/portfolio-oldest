@@ -23,15 +23,14 @@
   @extend %btn-placeholder;
   &_cross{
     background-color: transparent;
-    border-right: 2px solid $color-brand-1;
-    border-bottom: 2px solid $color-brand-1;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
     color: inherit;
     &:before,
     &:after{
       @include pseudo();
       z-index: 10;
       transition: .5s;
-      background-color: $color-brand-1;
     }
     &:before{
       left: 0;
@@ -52,7 +51,6 @@
       height: 100%;
       width: 0;
       z-index: 2;
-      background: $color-brand-1;
       top: 0;
       transition: .5s;
       transition-delay: .1s;
@@ -62,6 +60,9 @@
       z-index: 1;
       background: darken($color-brand-1, 15%);
       transition: .7s;
+    }
+    p{
+      @include transition();
     }
     .cross{
       position: absolute;
@@ -147,6 +148,37 @@
       }
       i{
         transform: scale(0);
+      }
+      p{
+        transform: translateX(-15px);
+      }
+    }
+
+    &-white{
+      border-right-color: $color-white; 
+      border-bottom-color: $color-white;
+      &:before,
+      &:after{
+        background-color: $color-white;
+      }
+      i{
+        &:before,
+        &:after{
+          background: $color-white;
+        }
+      }
+      .fl,
+      .sfl {
+        background: $color-white;
+      }
+      .sfl{
+        background: darken($color-white, 25%);
+      }
+      .cross{
+        &:before,
+        &:after{
+          background-color: darken($color-white, 25%);
+        }
       }
     }
   }

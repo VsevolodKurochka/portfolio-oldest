@@ -18,11 +18,6 @@ $sizes: (
 		sm:   60px,
 		md:   86px,
 		lg:   96px
-	),
-	'title-xlg': (
-		sm:   50px,
-		md:   60px,
-		lg:   75px
 	)
 );
 
@@ -52,12 +47,6 @@ $sizes: (
 		font-size: 45px;
 		@include fs('title-lg');
 		@include font('secondary');
-		@extend %title-default;
-	}
-	&-xlg{
-		line-height: 1.1;
-		font-size: 50px;
-		@include fs('title-xlg');
 		@extend %title-default;
 	}
 	&-group{
