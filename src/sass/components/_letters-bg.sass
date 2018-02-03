@@ -1,18 +1,20 @@
 $letters-bg-size: ('default': 70px, 'xs': 90px, 'sm': 110px, 'md': 150px, 'lg': 220px)
 
 +b("letters-bg")
-  position: absolute
+  +absolute
+
   color: $color-black
-  opacity: 0.04
   line-height: 1
   font-weight: bold
   text-transform: uppercase
   z-index: -1
-  filter: blur(100px)
-  transform: translateY(150%)
-  transition: all ease 0.5s
+  opacity: 0
   max-width: 800px
+  user-select: none
+  
+  transition: all ease 2s
+
   &[data-emergence="visible"]
-    filter: none
-    transform: none
+    opacity: 0.05
+
   +fs-simple($letters-bg-size)

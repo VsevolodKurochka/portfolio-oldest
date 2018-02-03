@@ -33,11 +33,11 @@
 					+e.H3.title
 						| Here you can see 
 						+e.SPAN.title-element my skills
-			.col-12.col-sm-5
+			.col-12.col-sm-4
 				+e.UL.items
 					each skill in skills
 						+e.LI.item
 							+e.P.item-header=skill.name
 							+e.item-line
 								+e.SPAN.item-line-slider(style="width:" + skill.percentage + '%')
-		//+e.P.letters-bg.letters-bg(data-emergence="hidden") So much
+		+e.P.letters-bg.letters-bg(data-emergence="hidden") Pro
