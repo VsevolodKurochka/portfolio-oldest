@@ -5,17 +5,18 @@
 	z-index: 1
 	color: #f7f7f7
 	&:before
-		+pseudo()
-		left: -50px
-		top: -50px
-		width: 120%
-		height: 100%
+		content: ''
+		+absolute(-50px, null, null, -50%)
+		+size(120%, 100%)
 		background-color: $color-general
 		transform: rotate(-5deg)
 		z-index: -1
 		+min(sm)
 			left: -100px
 			top: -100px
+
+	+max(sm)
+		background-color: darken($color-general, 25%)
 
 	+min(md)
 		padding-top: 200px

@@ -1,13 +1,26 @@
 +b('footer')
 	+e('menu')
 		li
-			display: inline-block
-			vertical-align: middle
-			&:not(:last-child)
-				margin-right: 15px
+			display: block
+			+max(sm)
+				&:not(:last-child)
+					margin-bottom: 15px
+					
+			+min(sm)
+				display: inline-block
+				vertical-align: middle
+				&:not(:last-child)
+					margin-right: 15px
 		a
-			+relative
 			display: inline-block
 			color: inherit
 			text-decoration: none
+			font-weight: bold
+			text-transform: uppercase
+
+			+relative
 			+linkEffect3
+
+
+		+max(sm)
+			margin-bottom: 30px

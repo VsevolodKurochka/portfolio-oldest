@@ -2,19 +2,24 @@
 	+e('shape')
 		z-index: -1
 		+m('left')
-			left: -20%
 			bottom: 75%
+			left: -45%
+			
+			+min(sm)
+				left: -20%
+				bottom: 75%	
 		
 		+m('right')
 			right: 0
-			bottom: 80%
+			bottom: 90%
 		
 		+m('main')
 			opacity: 0.5
 			+max(sm)
 				+size(300px)
+				bottom: 0
 			
-			+min(md)
+			+min(sm)
 				top: -100px
 			
 			+min(lg)
