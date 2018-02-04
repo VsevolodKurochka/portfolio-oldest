@@ -1,13 +1,13 @@
-+b.FOOTER.site-footer
++b.FOOTER.footer
 	+e.container.container
 		+e.row.row
-			.vcol-12.vcol-sm-8
-				+e.menu
-					ul
-						for item in nav
-							+menu-item('true', item.link, item.name)
-			.vcol-12.vcol-sm-4
-				+social('vsite-footer__social')
+			.col-12.col-sm-8
+				+e.UL.menu
+					for item in navigation
+						li
+							a(href=item.link)=item.name
+			.col-12.col-sm-4
+				+social('footer__social')
 	+e.container.container
 		+e.copyright
 			p © 2014-2017 VSEVOLOD KUROCHKA ALL RIGHTS RESERVED
