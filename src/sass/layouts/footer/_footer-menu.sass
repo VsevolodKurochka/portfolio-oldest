@@ -3,3 +3,11 @@
 		li
 			display: inline-block
 			vertical-align: middle
+			&:not(:last-child)
+				margin-right: 15px
+		a
+			+relative
+			display: inline-block
+			color: inherit
+			text-decoration: none
+			+linkEffect3
