@@ -10,12 +10,13 @@ $intro-title: ('default': 40px, 'sm': 50px, 'md': 60px, 'lg': 75px)
 		text-transform: uppercase
 		+fs-simple($intro-title)
 
-		// 1. Namespace
-		// 2. Intensity
-		// 3. Text color
-		// 4. Background color (flat)
-		// 5. Highlight #1 color
-		// 6. Highlight #2 color
-		// 7. Width (px)
-		// 8. Height (px)
-		+textGlitch("intro-title", 10, white, black, $color-brand-1, blue, 450, 250);
+		&[data-emergence="visible"]
+			// 1. Namespace
+			// 2. Intensity
+			// 3. Text color
+			// 4. Background color (flat)
+			// 5. Highlight #1 color
+			// 6. Highlight #2 color
+			// 7. Width (px)
+			// 8. Height (px)
+			+textGlitch("intro-title", 10, white, black, $color-brand-1, blue, 450, 250)
