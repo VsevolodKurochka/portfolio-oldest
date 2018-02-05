@@ -23,20 +23,20 @@
 	];
 
 +b.SECTION.skills.section-anchor#section-skills
-	+e.shape._right.shape__._brand-1._transparent(data-emergence="hidden")
+	+e.shape._right.shape__._transparent(data-emergence="hidden")
 		+e.inner
 			+e.inner-shape._brand-1
 	+e.container.container
 		+e.row.row
 			.col-12.col-sm-7
 				+b.group
-					+e.H3.title(data-emergence="hidden" data-text="Here you can see my skills")
+					+e.H3.title(data-emergence="hidden" data-text="Here you can see")
 						| Here you can see 
 						+e.SPAN.title-element my skills
 			.col-12.col-sm-4
 				+e.UL.items
 					each skill in skills
-						+e.LI.item
+						+e.LI.item(data-emergence="hidden")
 							+e.P.item-header=skill.name
 							+e.item-line
 								+e.SPAN.item-line-slider(style="width:" + skill.percentage + '%')

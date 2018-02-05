@@ -19,8 +19,18 @@
 			+relative
 			+size(100%, 5px)
 			background-color: lighten($color-black, 90%)
+			overflow: hidden
+			
 
 			+ee('slider')
 				+absolute(0,null,null,0)
 				height: 100%
-				background-color: lighten($color-brand-1, 0%)
+				background-color: $color-brand-1
+				transform: translateX(-100%)
+				+transition
+		&[data-emergence="visible"]
+			+b('skills')
+				+e('item')
+					+ee('line')
+						+ee('slider')
+							transform: none
