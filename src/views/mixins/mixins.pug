@@ -51,19 +51,19 @@ mixin hamburger(type)
 mixin case(image, title, content, category, link)
 	+b.case.col-12.col-sm-6.col-md-4
 		+e.inner
-			+e.header
-				+e.A.header-link(src=link)
+			+e.A.link(src=link)
+				+e.DIV.header
 					+e.IMG.header-image(src=image)
-			+e.content
-				+e.body
-					+e.P.subtitle=category
-					+e.A.title(href=link)=title
-					+e.body-content
-						p=content
-				+e.footer
-					+e.A.link.btn._plus(href=link)
-						i
-						p more
+				+e.DIV.content
+					+e.body
+						+e.P.subtitle=category
+						+e.P.title=title
+						+e.body-content
+							p=content
+					+e.footer
+						+e.SPAN.link.btn._plus
+							i
+							p more
 mixin form()
 	+b.FORM.form._block
 		+e.content
@@ -84,6 +84,9 @@ mixin social(size)
 		+e.LI.item
 			+e.A.item-link(href="tel: +38 (063) 505 62 63")
 				+e.I.item-link-icon.fa.fa-mobile(aria-hidden="true")
+		+e.LI.item
+			+e.A.item-link(href="mailto: seva.kurochka@gmail.com")
+				+e.I.item-link-icon.fa.fa-envelope(aria-hidden="true")
 		+e.LI.item
 			+e.A.item-link(href="skype: mozilla20103")
 				+e.I.item-link-icon.fa.fa-skype(aria-hidden="true")
