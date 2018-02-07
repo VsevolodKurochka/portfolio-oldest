@@ -1,8 +1,17 @@
 +b('testimonial')
 	position: relative
-	padding-top: 45px
-	padding-bottom: 45px
+	+padding-y(45px)
+
+	&:before
+		content: ''
+		+absolute(-100px, null, null, -80%)
+		+size(120%, 100%)
+		background-color: darken($color-brand-2, 15%)
+		transform: rotate(-5deg)
+		z-index: -1
+		// +min(sm)
+		// 	left: -100px
+		// 	top: -100px
+
 	+min(sm)
-		padding-top: 75px
-		padding-bottom: 75px
-	
+		+padding-y(75px)
