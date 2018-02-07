@@ -1,22 +1,22 @@
 +b('intro')
-	position: relative
-	padding-top: 75px
-	padding-bottom: 120px
+	+relative(-80px)
+	+padding-y(75px, 120px)
+	margin-bottom: -80px
 	z-index: 1
 	color: #f7f7f7
+	background-color: darken($color-general, 25%)
+	transform: rotate(5deg)
+
 	&:before
 		content: ''
-		+absolute(-50px, null, null, -50%)
+		+absolute(-100px, null, null, -30%)
 		+size(120%, 100%)
 		background-color: $color-general
-		transform: rotate(-5deg)
+		transform: rotate(10deg)
 		z-index: -1
-		+min(sm)
-			left: -100px
-			top: -100px
-
-	+max(sm)
-		background-color: darken($color-general, 25%)
+		// +min(sm)
+		// 	left: -100px
+		// 	top: -100px
 
 	+min(md)
 		padding-top: 200px
