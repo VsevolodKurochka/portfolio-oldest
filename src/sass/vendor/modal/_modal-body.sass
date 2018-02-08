@@ -11,10 +11,16 @@
 
 		+ee('header')
 			+min(sm)
+				margin-bottom: 0
 				display: flex
 				justify-content: space-between
 				align-items: center
 				padding-right: 15px
+
+			+ee('item')
+				+max(sm)
+					&:not(:last-child)
+						margin-bottom: 15px
 
 		+ee('content')
 			padding: 15px

@@ -48,22 +48,47 @@ mixin hamburger(type)
 				span
 				span
 
-mixin case(image, title, content, category, link)
+mixin case(item)
 	+b.case.col-12.col-sm-6.col-md-4
 		+e.inner
-			+e.A.bg(data-action="modal" data-open=link)
+			+e.A.bg(data-action="modal" data-open='#portfolio-modal-' + item.id)
 			+e.DIV.header
-				+e.IMG.header-image(src=image)
+				+e.IMG.header-image(src=item.image)
 			+e.DIV.content
 				+e.body
-					+e.P.subtitle=category
-					+e.P.title=title
+					+e.P.subtitle=item.category
+					+e.P.title=item.title
 					+e.body-content
-						p=content
+						p=item.content
 				+e.footer
 					+e.SPAN.link.btn._plus
 						i
 						p more
+		+b.modal(id="portfolio-modal-" + item.id)
+			+e.box._medium
+				+e.top
+					+e.BUTTON.close(data-close="modal") close
+				+e.header
+					+e.header-image(src=item.image)
+				+e.body
+					+e.body-header
+						+e.body-header-item
+							+e.body-header-item-inner
+								+e.P.title=item.title
+							+e.body-header-item-inner
+								+e.P.subtitle=item.category
+						+e.body-header-item
+							+e.A.link(target="_blank" src="#")
+								+e.I.link-icon.fas.fa-link
+								| Visit Website
+					+e.body-content
+						+e.body-content-row
+							p=item.content
+						+e.body-content-row
+							+e.P.body-content-title What was used?
+							+e.skills
+								each skill in item.skills
+									+e.SPAN.skills-item=skill
 mixin form()
 	+b.FORM.form._block
 		+e.content

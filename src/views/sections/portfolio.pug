@@ -74,32 +74,8 @@
 						| , I have collected many projects that I can share with you. For each project, I made considerable efforts to ensure that everyone was happy!
 		+e.content.row
 			for item in portfolio
-				+case(item.image, item.title, item.content, item.category, "#portfolio-modal-" + item.id)
-				+b.modal(id="portfolio-modal-" + item.id)
-					+e.box._medium
-						+e.top
-							+e.BUTTON.close(data-close="modal") close
-						+e.header
-							+e.header-image(src=item.image)
-						+e.body
-							+e.body-header
-								+e.body-header-item
-									+e.body-header-item-inner
-										+e.P.title=item.title
-									+e.body-header-item-inner
-										+e.P.subtitle=item.category
-								+e.body-header-item
-									+e.A.link(target="_blank" src="#")
-										+e.I.link-icon.fas.fa-link
-										| Visit Website
-							+e.body-content
-								+e.body-content-row
-									p=item.content
-								+e.body-content-row
-									+e.P.body-content-title What was used?
-									+e.skills
-										each skill in item.skills
-											+e.SPAN.skills-item=skill
+				+case(item)
+				
 		+e.footer
 			+btn-cross('See full portfolio', 'link', '#')(class="_cross-brand-1 _size-lg")
 		+e.P.letters-bg.letters-bg(data-emergence="hidden") cases
