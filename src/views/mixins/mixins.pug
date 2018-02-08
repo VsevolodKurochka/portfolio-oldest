@@ -51,19 +51,19 @@ mixin hamburger(type)
 mixin case(image, title, content, category, link)
 	+b.case.col-12.col-sm-6.col-md-4
 		+e.inner
-			+e.A.link(src=link)
-				+e.DIV.header
-					+e.IMG.header-image(src=image)
-				+e.DIV.content
-					+e.body
-						+e.P.subtitle=category
-						+e.P.title=title
-						+e.body-content
-							p=content
-					+e.footer
-						+e.SPAN.link.btn._plus
-							i
-							p more
+			+e.A.bg(data-action="modal" data-open=link)
+			+e.DIV.header
+				+e.IMG.header-image(src=image)
+			+e.DIV.content
+				+e.body
+					+e.P.subtitle=category
+					+e.P.title=title
+					+e.body-content
+						p=content
+				+e.footer
+					+e.SPAN.link.btn._plus
+						i
+						p more
 mixin form()
 	+b.FORM.form._block
 		+e.content

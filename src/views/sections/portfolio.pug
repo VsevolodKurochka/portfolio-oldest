@@ -1,46 +1,52 @@
 -
 	const portfolio = [
 		{
+			"id": '1',
 			"image": "img/item1.jpg",
 			"title": "Item Wordpress 1",
 			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
 			"category": "Front End",
-			"link": "#"
+			'skills': 'CSS, HTML, JS, PHP, WP'
 		},
 		{
+			"id": '2',
 			"image": "img/item2.jpg",
 			"title": "Item Wordpress 2",
 			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
 			"category": "Front End",
-			"link": "#"
+			'skills': 'CSS, HTML, JS, PHP, WP'
 		},
 		{
+			"id": '3',
 			"image": "img/item3.jpg",
 			"title": "Item Wordpress 3",
 			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
 			"category": "Front End",
-			"link": "#"
+			'skills': 'CSS, HTML, JS, PHP, WP'
 		},
 		{
+			"id": '4',
 			"image": "img/item1.jpg",
 			"title": "Item Wordpress 1",
 			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
 			"category": "Front End",
-			"link": "#"
+			'skills': 'CSS, HTML, JS, PHP, WP'
 		},
 		{
+			"id": '5',
 			"image": "img/item2.jpg",
 			"title": "Item Wordpress 2",
 			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
 			"category": "Front End",
-			"link": "#"
+			'skills': 'CSS, HTML, JS, PHP, WP'
 		},
 		{
+			"id": '6',
 			"image": "img/item3.jpg",
 			"title": "Item Wordpress 3",
 			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
 			"category": "Front End",
-			"link": "#"
+			'skills': 'CSS, HTML, JS, PHP, WP'
 		}
 	];
 
@@ -62,7 +68,26 @@
 						| , I have collected many projects that I can share with you. For each project, I made considerable efforts to ensure that everyone was happy!
 		+e.content.row
 			for item in portfolio
-				+case(item.image, item.title, item.content, item.category, item.link)
+				+case(item.image, item.title, item.content, item.category, "#portfolio-modal-" + item.id)
+				+b.modal(id="portfolio-modal-" + item.id)
+					+e.box._medium
+						+e.top
+							+e.BUTTON.close(data-close="modal") close
+						+e.header
+							+e.header-image(src=item.image)
+						+e.body
+							+e.body-header
+								+e.body-header-item
+									+e.body-header-item-inner
+										+e.P.title=item.title
+									+e.body-header-item-inner
+										+e.P.subtitle=item.category
+								+e.body-header-item
+									+e.A.link(target="_blank" src="#")
+										+e.I.link-icon.fas.fa-link
+										| Visit Website
+							+e.body-content
+								p=item.content
 		+e.footer
 			+btn-cross('See full portfolio', 'link', '#')(class="_cross-brand-1 _size-lg")
 		+e.P.letters-bg.letters-bg(data-emergence="hidden") cases

@@ -70,6 +70,8 @@
 		}
 
 		_showButtonClick(e) {
+			e.preventDefault();
+			
 			// Get button data-attributes
 			var modalData = e.target.dataset;
 
@@ -82,19 +84,6 @@
 				let modalCurrent = document.getElementById(modalID);
 
 				this.modalOpen(modalCurrent);
-
-				// if(modalData.video != undefined){
-				// 	let videoSRC = modalData.video;
-				// 	let videoWrapper = modalCurrent.getElementsByClassName('v-modal__video')[0];
-
-				// 	videoWrapper.innerHTML = '';
-
-				// 	let videoIframe = document.createElement('iframe');
-
-				// 	addClass(videoIframe, 'v-modal__iframe');
-				// 	videoIframe.setAttribute('src', videoSRC);
-				// 	videoWrapper.appendChild(videoIframe);
-				// }
 
 			}else{
 				console.error('No element with ID: ' + modalID);
@@ -150,7 +139,7 @@
 				this.addition.addEventListener( 'click', (e) => this.additionClick(e, this) );
 			}
 
-			//this.linksScroll();
+			this.linksScroll();
 
 			if(exists(this.navigation)) {
 				this.navigationScroll();
@@ -181,6 +170,7 @@
 
 		linksScroll() {
 			new SmoothScroll(this.links, {
+				offset: 100,
 				after: () => {
 					removeClass(this.hamburger, 'active');
 					removeClass(this.navigation, `nav__menu_active`);
