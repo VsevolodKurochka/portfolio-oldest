@@ -1,3 +1,25 @@
+-
+	const reviews = [
+		{
+			image: 'img/item1.jpg',
+			name: 'Dmitry Kirpach',
+			position: 'CEO & Founder',
+			content: 'Man is the word! He said he did. It\'s nice to work, I advise everyone.',
+		},
+		{
+			image: 'img/item1.jpg',
+			name: 'Dmitry Kirpach',
+			position: 'CEO & Founder',
+			content: 'Man is the word! He said he did. It\'s nice to work, I advise everyone.',
+		},
+		{
+			image: 'img/item1.jpg',
+			name: 'Dmitry Kirpach',
+			position: 'CEO & Founder',
+			content: 'Man is the word! He said he did. It\'s nice to work, I advise everyone.',
+		}
+	];
+
 +b.SECTION.testimonial#section-testimonial
 	+e.shape._right.shape__._brand-1._transparent(data-emergence="hidden")
 		+e.inner
@@ -15,15 +37,16 @@
 							+b.SPAN.highlight._brand-1 Vsevolod Kurochka
 							| is the key to success and quality.
 			.col-12.col-sm-6.col-md-5
-				+e.items-wrapper
-					+e.item
-						+e.item-header
-							+e.item-image-wrapper
-								+e.item-image(src="img/item1.jpg")
-						+e.item-body
-							+e.item-body-content
-								p Man is the word! He said he did. It's nice to work, I advise everyone.
-						+e.item-footer
-							+e.P.item-title Dmitry Kirpach
-							+e.P.item-subtitle CEO&amp;Founder
+				+e.items-wrapper.owl-carousel#owl-testimonial
+					each review in reviews
+						+e.item
+							+e.item-header
+								+e.item-image-wrapper
+									+e.item-image(src=review.image)
+							+e.item-body
+								+e.item-body-content
+									p=review.content
+							+e.item-footer
+								+e.P.item-title=review.name
+								+e.P.item-subtitle=review.position
 	+e.P.letters-bg.letters-bg(data-emergence="hidden") Reviews
