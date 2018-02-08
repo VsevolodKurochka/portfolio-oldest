@@ -19,3 +19,17 @@
 		+ee('content')
 			padding: 15px
 			color: lighten($color-black, 35%)
+
+			+ee('row')
+
+				&:not(:last-child)
+					margin-bottom: 25px
+
+			+ee('title')
+				font-weight: bold
+				text-transform: uppercase
+				+font('secondary')
+				margin-bottom: 5px
+
+				+min(sm)
+					font-size: 20px

@@ -1,3 +1,16 @@
 +b('case')
 	+e('link')
 		cursor: pointer
+	&:hover
+		+b('case')
+			+e('link')
+				color: #fff
+				&:before,
+				&:after
+					width: 110%
+					transform: none
+					opacity: 1
+				i
+					&:before,
+					&:after
+						background-color: #fff

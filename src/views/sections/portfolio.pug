@@ -6,7 +6,8 @@
 			"title": "Item Wordpress 1",
 			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
 			"category": "Front End",
-			'skills': 'CSS, HTML, JS, PHP, WP'
+			"skills": ['CSS', 'HTML', 'JS', 'PHP', 'WP'],
+			"complexity": "4"
 		},
 		{
 			"id": '2',
@@ -14,7 +15,8 @@
 			"title": "Item Wordpress 2",
 			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
 			"category": "Front End",
-			'skills': 'CSS, HTML, JS, PHP, WP'
+			"skills": ['CSS', 'HTML', 'JS', 'PHP', 'WP'],
+			"complexity": "4"
 		},
 		{
 			"id": '3',
@@ -22,7 +24,8 @@
 			"title": "Item Wordpress 3",
 			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
 			"category": "Front End",
-			'skills': 'CSS, HTML, JS, PHP, WP'
+			"skills": ['CSS', 'HTML', 'JS', 'PHP', 'WP'],
+			"complexity": "4"
 		},
 		{
 			"id": '4',
@@ -30,7 +33,8 @@
 			"title": "Item Wordpress 1",
 			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
 			"category": "Front End",
-			'skills': 'CSS, HTML, JS, PHP, WP'
+			"skills": ['CSS', 'HTML', 'JS', 'PHP', 'WP'],
+			"complexity": "4"
 		},
 		{
 			"id": '5',
@@ -38,7 +42,8 @@
 			"title": "Item Wordpress 2",
 			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
 			"category": "Front End",
-			'skills': 'CSS, HTML, JS, PHP, WP'
+			"skills": ['CSS', 'HTML', 'JS', 'PHP', 'WP'],
+			"complexity": "4"
 		},
 		{
 			"id": '6',
@@ -46,7 +51,8 @@
 			"title": "Item Wordpress 3",
 			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
 			"category": "Front End",
-			'skills': 'CSS, HTML, JS, PHP, WP'
+			"skills": ['CSS', 'HTML', 'JS', 'PHP', 'WP'],
+			"complexity": "4"
 		}
 	];
 
@@ -87,7 +93,13 @@
 										+e.I.link-icon.fas.fa-link
 										| Visit Website
 							+e.body-content
-								p=item.content
+								+e.body-content-row
+									p=item.content
+								+e.body-content-row
+									+e.P.body-content-title What was used?
+									+e.skills
+										each skill in item.skills
+											+e.SPAN.skills-item=skill
 		+e.footer
 			+btn-cross('See full portfolio', 'link', '#')(class="_cross-brand-1 _size-lg")
 		+e.P.letters-bg.letters-bg(data-emergence="hidden") cases
