@@ -1,7 +1,8 @@
 $(document).ready(function(){
 	$('#owl-testimonial').owlCarousel({
+		loop: true,
 		items: 1,
-		autoplay: false,
+		autoplay: true,
 		autoplayTimeout: 3000,
 		dots: false,
 		nav: true,
