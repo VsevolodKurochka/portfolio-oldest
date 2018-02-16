@@ -2,7 +2,7 @@
 	const portfolio = [
 		{
 			"id": '1',
-			"image": "img/item1.jpg",
+			"image": "img/image1.jpg",
 			"title": "Item Wordpress 1",
 			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
 			"category": "Front End",
@@ -11,7 +11,7 @@
 		},
 		{
 			"id": '2',
-			"image": "img/item2.jpg",
+			"image": "img/image2.jpg",
 			"title": "Item Wordpress 2",
 			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
 			"category": "Front End",
@@ -20,7 +20,7 @@
 		},
 		{
 			"id": '3',
-			"image": "img/item3.jpg",
+			"image": "img/image3.jpg",
 			"title": "Item Wordpress 3",
 			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
 			"category": "Front End",
@@ -29,7 +29,7 @@
 		},
 		{
 			"id": '4',
-			"image": "img/item1.jpg",
+			"image": "img/image4.jpg",
 			"title": "Item Wordpress 1",
 			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
 			"category": "Front End",
@@ -38,7 +38,7 @@
 		},
 		{
 			"id": '5',
-			"image": "img/item2.jpg",
+			"image": "img/image5.jpg",
 			"title": "Item Wordpress 2",
 			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
 			"category": "Front End",
@@ -47,7 +47,25 @@
 		},
 		{
 			"id": '6',
-			"image": "img/item3.jpg",
+			"image": "img/image6.jpg",
+			"title": "Item Wordpress 3",
+			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
+			"category": "Front End",
+			"skills": ['CSS', 'HTML', 'JS', 'PHP', 'WP'],
+			"complexity": "4"
+		},
+		{
+			"id": '7',
+			"image": "img/image1.jpg",
+			"title": "Item Wordpress 3",
+			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
+			"category": "Front End",
+			"skills": ['CSS', 'HTML', 'JS', 'PHP', 'WP'],
+			"complexity": "4"
+		},
+		{
+			"id": '8',
+			"image": "img/image2.jpg",
 			"title": "Item Wordpress 3",
 			"content": "Forget about reviewing hundreds of questionn aires every day, wasting money on meaningless correspondence!",
 			"category": "Front End",
@@ -72,10 +90,9 @@
 						| For 
 						+b.SPAN.highlight._brand-1 4 years of work 
 						| , I have collected many projects that I can share with you. For each project, I made considerable efforts to ensure that everyone was happy!
-		+e.content.row
-			for item in portfolio
-				+case(item)
+	+e.content
+		for item in portfolio
+			+case(item)
 				
-		+e.footer
-			+btn-cross('See full portfolio', 'link', '#')(class="_cross-brand-1 _size-lg")
-		+e.P.letters-bg.letters-bg(data-emergence="hidden") cases
+	+e.footer
+		+btn-cross('See full portfolio', 'link', '#')(class="_cross-brand-1 _size-lg")

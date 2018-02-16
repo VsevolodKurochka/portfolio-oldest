@@ -1,3 +1,26 @@
 +b('portfolio')
 	+e('content')
+		display: grid
+		grid-template-columns: repeat(3, 1fr)
+		grid-gap: getComp(gutter)
+		padding: getComp(gutter)
 		margin-bottom: 60px
+
+		+b('case')
+			&:nth-child(1),
+			&:nth-child(5)
+				
+				+b('case')
+					+e('inner')
+						height: 100%
+
+					+e('header')
+						height: 100%
+					+e('content')
+						display: none
+
+			&:nth-child(4)
+				grid-column: 1 / 3
+
+			&__body-content
+				max-width: 400px
