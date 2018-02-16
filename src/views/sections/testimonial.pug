@@ -1,5 +1,5 @@
 -
-	const reviews = [
+	const testimonials = [
 		{
 			id: '1',
 			image: 'img/item1.jpg',
@@ -38,18 +38,18 @@
 						p
 							| Customers are always happy. They know that 
 							+b.SPAN.highlight._brand-1 Vsevolod Kurochka
-							| is the key to success and quality.
+							|  is the key to success and quality.
 			.col-12.col-sm-6.col-md-5
-				+e.items-wrapper.owl-carousel#owl-testimonial
-					each review in reviews
+				+e.content.owl-carousel#owl-testimonial
+					each testimonial in testimonials
 						+e.item
 							+e.item-header
 								+e.item-image-wrapper
-									+e.item-image(src=review.image)
+									+e.item-image(src=testimonial.image)
 							+e.item-body
 								+e.item-body-content
-									p=review.content
+									p=testimonial.content
 							+e.item-footer
-								+e.P.item-title=review.name
-								+e.P.item-subtitle=review.position
-	+e.P.letters-bg.letters-bg(data-emergence="hidden") Reviews
+								+e.P.item-title=testimonial.name
+								+e.P.item-subtitle=testimonial.position
+	// +e.P.letters-bg.letters-bg(data-emergence="hidden") testimonials
