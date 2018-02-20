@@ -8,6 +8,8 @@
 
 		padding: 30px
 
+		transform: rotate(1deg)
+
 		+ee('header')
 
 			margin-bottom: 15px
@@ -16,16 +18,30 @@
 
 				height: 100px
 
-				path, rect
+			path, rect
 
-					+transition
+				+transition
+
+				fill: $color-brand-1
+
+				stroke-dasharray: 50
+				stroke-dashoffset: 50
 
 		+ee('title')
 			text-transform: uppercase
 			font-weight: bold
+
 			+font("secondary")
 
 			+transition
+
+		&[data-emergence="visible"] &
+
+			+ee('header')
+
+				path, rect
+
+					stroke-dashoffset: 0
 
 		&:hover &
 
