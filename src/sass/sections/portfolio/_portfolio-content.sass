@@ -1,32 +1,38 @@
 +b('portfolio')
 	+e('content')
-		display: grid
-		margin-bottom: 60px
-		grid-gap: getComp(gutter)
 		
-		+min(sm)
+		margin-bottom: 60px
+		//padding: getComp(gutter)
+
+		@supports (display: grid)
+			display: grid
+			grid-gap: getComp(gutter)
+			+min(sm)
+				grid-template-columns: repeat(3, 1fr)
 			
-			grid-template-columns: repeat(3, 1fr)
+
+		@supports not (display: grid)
+			+max(sm)
+				+b('case')
+					margin-bottom: 15px
+
+		+b('case')
+			&:nth-child(1) &,
+			&:nth-child(4) &,
+			&:nth-child(5) &
 			
-			padding: getComp(gutter)
+				+e('inner')
+					height: 100%
 
-			+b('case')
-				&:nth-child(1),
-				&:nth-child(4),
-				&:nth-child(5)
-					
-					+b('case')
-						+e('inner')
-							height: 100%
-
-						+e('header')
-							height: 100%
-						+e('content')
-							display: none
-
+				+e('header')
+					height: 100%
+				+e('content')
+					display: none
+			
+			+min(sm)
 				&:nth-child(4)
 					grid-column: 1 / 3
 					grid-row: 2 / 4
 
-				&__body-content
-					max-width: 400px
+			&__body-content
+				max-width: 400px
