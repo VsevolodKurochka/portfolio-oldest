@@ -10,11 +10,33 @@
 
 		+ee('header')
 
+			margin-bottom: 15px
+
 			svg
 
 				height: 100px
+
+				path, rect
+
+					+transition
 
 		+ee('title')
 			text-transform: uppercase
 			font-weight: bold
 			+font("secondary")
+
+			+transition
+
+		&:hover &
+
+			+ee('header')
+
+				svg
+
+					path, rect
+
+						fill: $color-brand-2
+
+			+ee('title')
+
+				color: $color-brand-2
