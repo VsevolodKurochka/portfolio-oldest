@@ -1,5 +1,15 @@
 +b('catching')
-	position: relative
+	+relative
+
+	overflow: hidden
+
+	+padding-y(15px, 60px)
+
+	+min(xs)
+		padding-top: 45px
+	+min(md)
+		+padding-y(90px, 220px)
+			
 	&:before
 		+pseudo()
 		left: -50px
@@ -16,11 +26,4 @@
 			top: -100px
 		
 	
-	padding-top: 15px
-	padding-bottom: 60px
-
-	+min(xs)
-		padding-top: 45px
-	+min(md)
-		padding-top: 90px
-		padding-bottom: 220px
+	
