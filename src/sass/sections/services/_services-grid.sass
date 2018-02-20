@@ -1,0 +1,15 @@
++b('services')
+
+	+e('grid')
+
+		@supports (display: grid)
+
+			display: grid
+
+			grid-gap: 1px
+
+			background-color: lighten($color-black, 95%)
+
+			+min(sm)
+
+				grid-template-columns: repeat(3, 1fr)
