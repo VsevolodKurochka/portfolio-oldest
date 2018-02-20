@@ -23,161 +23,161 @@
 
 	var exists = element => typeof(element) != 'undefined' && element != null;
 
-	class Modal {
-		constructor(){
+	// class Modal {
+	// 	constructor(){
 
-			// Prefix for modal class
-			this.prefix = '';
+	// 		// Prefix for modal class
+	// 		this.prefix = '';
 
-			// Name of modal class
-			this.name = `${this.prefix}modal`;
+	// 		// Name of modal class
+	// 		this.name = `${this.prefix}modal`;
 
-			// All modals
-			this.modals = document.querySelectorAll(`.${this.name}`);
+	// 		// All modals
+	// 		this.modals = document.querySelectorAll(`.${this.name}`);
 
-			// Open Buttons
-			this.openButtons = document.querySelectorAll(`[data-action="${this.name}"]`);
+	// 		// Open Buttons
+	// 		this.openButtons = document.querySelectorAll(`[data-action="${this.name}"]`);
 
-			// Close Button(`x`)
-			this.closeButtons = document.querySelectorAll(`[data-close="${this.name}"]`);
+	// 		// Close Button(`x`)
+	// 		this.closeButtons = document.querySelectorAll(`[data-close="${this.name}"]`);
 
-			this.modalClickEvents = ['click'];
+	// 		this.modalClickEvents = ['click'];
 
-			//log(this.openButtons);
-			// this.openButtons.forEach( (openButton) => {
-			// 	log(openButton);
-			// 	//openButton.addEventListener('click', (e) => this._showButtonClick(e, this));
-			// });
+	// 		//log(this.openButtons);
+	// 		// this.openButtons.forEach( (openButton) => {
+	// 		// 	log(openButton);
+	// 		// 	//openButton.addEventListener('click', (e) => this._showButtonClick(e, this));
+	// 		// });
 
-			for(let i = 0; i < this.openButtons.length; i++){
-				this.openButtons[i].addEventListener('click', (e) => {
-					this._showButtonClick(e);
-				});
-			}
+	// 		for(let i = 0; i < this.openButtons.length; i++){
+	// 			this.openButtons[i].addEventListener('click', (e) => {
+	// 				this._showButtonClick(e);
+	// 			});
+	// 		}
 
-			for(let i = 0; i < this.closeButtons.length; i++){
-				this.closeButtons[i].addEventListener('click', (e) => {
-					this._closeButtonClick(e);
-				});
-			}
+	// 		for(let i = 0; i < this.closeButtons.length; i++){
+	// 			this.closeButtons[i].addEventListener('click', (e) => {
+	// 				this._closeButtonClick(e);
+	// 			});
+	// 		}
 
-			document.body.addEventListener('click', (e) => {
-				this._bodyClick(e);
-			});
+	// 		document.body.addEventListener('click', (e) => {
+	// 			this._bodyClick(e);
+	// 		});
 
-			//console.log(this.openButtons.length);
+	// 		//console.log(this.openButtons.length);
 
-			// this.modalClickEvents.forEach( (modalClickEvent) => {
+	// 		// this.modalClickEvents.forEach( (modalClickEvent) => {
 
-			// 	// document.body.addEventListener(modalClickEvent, (e) => {
-			// 	// 	this._bodyClick(e, this);
-			// 	// });
+	// 		// 	// document.body.addEventListener(modalClickEvent, (e) => {
+	// 		// 	// 	this._bodyClick(e, this);
+	// 		// 	// });
 
 				
 
-			// 	// this.closeButtons.forEach( (button) => {
-			// 	// 	button.addEventListener(modalClickEvent, (e) => this._closeButtonClick(e, this));
-			// 	// });
+	// 		// 	// this.closeButtons.forEach( (button) => {
+	// 		// 	// 	button.addEventListener(modalClickEvent, (e) => this._closeButtonClick(e, this));
+	// 		// 	// });
 
-			// });
-		}
+	// 		// });
+	// 	}
 
 
-		modalClose(el){
-			removeClass(el, `${this.name}_showing_in`);
-			removeClass(document.body, `${this.name}-open`);
-		}
+	// 	modalClose(el){
+	// 		removeClass(el, `${this.name}_showing_in`);
+	// 		removeClass(document.body, `${this.name}-open`);
+	// 	}
 
-		modalOpen(el){
-			addClass(document.body, `${this.name}-open`);
-			addClass(el, `${this.name}_showing_in`);
-		}
+	// 	modalOpen(el){
+	// 		addClass(document.body, `${this.name}-open`);
+	// 		addClass(el, `${this.name}_showing_in`);
+	// 	}
 
-		_showButtonClick(e) {
-			// Get button data-attributes
-			var modalData = e.target.dataset;
+	// 	_showButtonClick(e) {
+	// 		// Get button data-attributes
+	// 		var modalData = e.target.dataset;
 
-			// Get attribute data-open and replace # with empty line
-			var modalID = modalData.open.replace("#", "");
+	// 		// Get attribute data-open and replace # with empty line
+	// 		var modalID = modalData.open.replace("#", "");
 			
 			
-			if( exists(document.getElementById(modalID) ) ){
+	// 		if( exists(document.getElementById(modalID) ) ){
 
-				let modalCurrent = document.getElementById(modalID);
+	// 			let modalCurrent = document.getElementById(modalID);
 
-				this.modalOpen(modalCurrent);
+	// 			this.modalOpen(modalCurrent);
 
-				if(modalData.video != undefined){
+	// 			if(modalData.video != undefined){
 					
 
-					if( exists(modalCurrent.getElementsByClassName('modal__video')[0]) ){
+	// 				if( exists(modalCurrent.getElementsByClassName('modal__video')[0]) ){
 
-						this._removeIframe(modalCurrent);
+	// 					this._removeIframe(modalCurrent);
 
-						let videoIframe = document.createElement('iframe');
+	// 					let videoIframe = document.createElement('iframe');
 
-						addClass(videoIframe, 'modal__video-iframe');
+	// 					addClass(videoIframe, 'modal__video-iframe');
 
-						let videoSRC = modalData.video;
-						videoIframe.setAttribute('src', videoSRC);
-						videoIframe.setAttribute('allow', 'autoplay; encrypted-media');
-						videoIframe.setAttribute('allowfullscreen', 'allowfullscreen');
+	// 					let videoSRC = modalData.video;
+	// 					videoIframe.setAttribute('src', videoSRC);
+	// 					videoIframe.setAttribute('allow', 'autoplay; encrypted-media');
+	// 					videoIframe.setAttribute('allowfullscreen', 'allowfullscreen');
 
-						videoWrapper.appendChild(videoIframe);
-					}
-				}
+	// 					videoWrapper.appendChild(videoIframe);
+	// 				}
+	// 			}
 
-			}else{
-				console.error('No element with ID: ' + modalID);
-			}
-		}
+	// 		}else{
+	// 			console.error('No element with ID: ' + modalID);
+	// 		}
+	// 	}
 
-		_removeIframe(element){
-			if( exists(element.getElementsByClassName('modal__video')[0]) ){
-				let _videoWrapper = element.getElementsByClassName('modal__video')[0];
-				_videoWrapper.innerHTML = '';
-			}
-		}
+	// 	_removeIframe(element){
+	// 		if( exists(element.getElementsByClassName('modal__video')[0]) ){
+	// 			let _videoWrapper = element.getElementsByClassName('modal__video')[0];
+	// 			_videoWrapper.innerHTML = '';
+	// 		}
+	// 	}
 
-		_closeButtonClick(e) {
+	// 	_closeButtonClick(e) {
 
-			let modalCurrent = e.target.closest(`.${this.name}`);
-			this.modalClose( modalCurrent );
+	// 		let modalCurrent = e.target.closest(`.${this.name}`);
+	// 		this.modalClose( modalCurrent );
 
-			this._removeIframe(modalCurrent);
-		}
+	// 		this._removeIframe(modalCurrent);
+	// 	}
 
-		_getEventTarget(e){
-			var targ;
+	// 	_getEventTarget(e){
+	// 		var targ;
 
-			if (e.target) { // W3C
-				targ = e.target;
-			}else if (e.srcElement) { // IE6-8
-				targ = e.srcElement;
-			}else if(e.originalTarget){
-				targ = e.originalTarget;
-			}
-			if (targ.nodeType == 3) { // Safari
-				targ = targ.parentNode;
-			}
-			return targ;
-		}
+	// 		if (e.target) { // W3C
+	// 			targ = e.target;
+	// 		}else if (e.srcElement) { // IE6-8
+	// 			targ = e.srcElement;
+	// 		}else if(e.originalTarget){
+	// 			targ = e.originalTarget;
+	// 		}
+	// 		if (targ.nodeType == 3) { // Safari
+	// 			targ = targ.parentNode;
+	// 		}
+	// 		return targ;
+	// 	}
 
-		_bodyClick(e){
-			let target = this._getEventTarget(e);
+	// 	_bodyClick(e){
+	// 		let target = this._getEventTarget(e);
 
-			//log(target);
-			for(let i = 0; i < this.modals.length; i++){
+	// 		//log(target);
+	// 		for(let i = 0; i < this.modals.length; i++){
 
-				let targetModal = this.modals[i];
+	// 			let targetModal = this.modals[i];
 
-				if(target == targetModal){
-					this.modalClose(targetModal);
-					this._removeIframe(targetModal);
-				}
-			}
-		}
-	}
+	// 			if(target == targetModal){
+	// 				this.modalClose(targetModal);
+	// 				this._removeIframe(targetModal);
+	// 			}
+	// 		}
+	// 	}
+	// }
 
 	class Navigation {
 		constructor(){
@@ -237,7 +237,7 @@
 	}
 
 	document.addEventListener("DOMContentLoaded", function(){
-		new Modal();
+		//new Modal();
 
 		new Navigation();
 
