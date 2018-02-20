@@ -4,42 +4,43 @@
 		margin-bottom: 60px
 		//padding: getComp(gutter)
 
-		// @supports (display: grid)
-		// 	display: grid
-		// 	grid-gap: getComp(gutter)
-		// 	+min(sm)
-		// 		grid-template-columns: repeat(3, 1fr)
+		@supports (display: grid)
+			display: grid
+			grid-gap: getComp(gutter)
+			+min(sm)
+				grid-template-columns: repeat(3, 1fr)
 			
 
-		// @supports not (display: grid)
-		// 	+max(sm)
-		// 		+b('case')
-		// 			margin-bottom: 15px
+		@supports not (display: grid)
+			+max(sm)
+				+b('case')
+					margin-bottom: 15px
 
 		+b('case')
-			&:nth-child(1),
-			&:nth-child(4),
-			&:nth-child(5)
-				
-				+b('case')
+
+			+min(md)
+				&:nth-child(1),
+				&:nth-child(4),
+				&:nth-child(5)
 					
-					+e('inner')
-						height: 100%
+					+b('case')
+						
+						+e('inner')
+							height: 100%
 
-					+e('header')
-						+relative
+						+e('header')
+							+relative
 
-						height: 100%
+							height: 100%
 
-						&:before
-							content: ''
-							+absolute(0, null, null, 0)
-							+size(100%)
-							background-color: transparentize($color-black, 0.3)
-							z-index: 1
+							&:before
+								content: ''
+								+absolute(0, null, null, 0)
+								+size(100%)
+								background-color: transparentize($color-black, 0.3)
+								z-index: 1
 
-					+e('content')
-						+min(sm)
+						+e('content')
 							+absolute(null, null, 0, 0)
 							+padding(null, null, 15px, 15px)
 
@@ -47,10 +48,9 @@
 
 							color: $color-white
 
-					+e('footer')
-						border-bottom: none
-			
-			+min(sm)
+						+e('footer')
+							border-bottom: none
+
 				&:nth-child(4)
 					grid-column: 1 / 3
 					grid-row: 2 / 4
