@@ -87,7 +87,7 @@
 	//- +e.shape._right.shape__._brand-1._transparent(data-emergence="hidden")
 		+e.inner
 			+e.inner-shape._brand-1
-	+e.container.container
+	.container
 		+e.header.row
 			.col-12.col-sm-10
 				+b.group._inline
@@ -99,7 +99,7 @@
 						| For 
 						+b.SPAN.highlight._brand-1 4 years of work 
 						| , I have collected many projects that I can share with you. For each project, I made considerable efforts to ensure that everyone was happy!
-	+e.content
+	+e.grid.owl-carousel#portfolio-grid
 		for item in portfolio
 			+case(item)
 				

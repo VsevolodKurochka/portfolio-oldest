@@ -1,20 +1,20 @@
 +b('portfolio')
-	+e('content')
+	+e('grid')
 		
 		margin-bottom: 60px
 		//padding: getComp(gutter)
 
-		@supports (display: grid)
-			display: grid
-			grid-gap: getComp(gutter)
-			+min(sm)
-				grid-template-columns: repeat(3, 1fr)
+		// @supports (display: grid)
+		// 	display: grid
+		// 	grid-gap: getComp(gutter)
+		// 	+min(sm)
+		// 		grid-template-columns: repeat(3, 1fr)
 			
 
-		@supports not (display: grid)
-			+max(sm)
-				+b('case')
-					margin-bottom: 15px
+		// @supports not (display: grid)
+		// 	+max(sm)
+		// 		+b('case')
+		// 			margin-bottom: 15px
 
 		+b('case')
 			&:nth-child(1),
