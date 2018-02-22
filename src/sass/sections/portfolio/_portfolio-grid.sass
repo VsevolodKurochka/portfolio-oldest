@@ -3,11 +3,12 @@
 		
 		margin-bottom: 60px
 		//padding: getComp(gutter)
-
+		
 		@supports (display: grid)
-			display: grid
-			grid-gap: getComp(gutter)
-			+min(sm)
+			
+			+min(md)
+				display: grid
+				grid-gap: getComp(gutter)
 				grid-template-columns: repeat(3, 1fr)
 			
 
@@ -15,6 +16,24 @@
 			+max(sm)
 				+b('case')
 					margin-bottom: 15px
+
+		+max(md)
+			.owl
+				&-nav
+					+absolute(0, 0)
+				&-prev,
+				&-next
+					+size(75px)
+					text-align: center
+					color: #fff
+					line-height: 75px
+					font-size: 40px
+					background-color: $color-brand-1
+					margin-bottom: 15px
+					+transition
+
+					&:hover
+						background-color: $color-brand-2
 
 		+b('case')
 
