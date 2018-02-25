@@ -2,6 +2,10 @@
 
 	+e('item')
 
+		+relative
+
+		top: 0
+
 		text-align: center
 
 		background-color: $color-white
@@ -9,6 +13,12 @@
 		padding: 30px
 
 		transform: rotate(1deg)
+
+		+transition
+
+		&:hover
+
+			top: -2px
 
 		+ee('header')
 
